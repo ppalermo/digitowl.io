@@ -1,6 +1,7 @@
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
+![DigitOwl](https://github.com/ppalermo/digitowl.io/blob/main/digitowl.io/static/_media/coffeowl.jpg?raw=true)
 {{ .Content }}
 {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 

