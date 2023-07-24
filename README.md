@@ -1,3 +1,2 @@
-# digitowl.io
- digitowl WP on github
-## This repo is my website.
+### digitowl.io
+digitowl.io - Hugo deployed via git to on CloudFlare pages.
