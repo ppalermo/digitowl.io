@@ -1,3 +1,5 @@
-baseURL = 'http://example.org/'
+relativeURLs = true
+baseURL = 'http://digitowl.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'digitowl'
+theme = "papercss-hugo-theme"
