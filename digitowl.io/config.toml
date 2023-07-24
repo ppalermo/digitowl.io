@@ -1,5 +1,75 @@
 relativeURLs = true
-baseURL = 'http://digitowl.io/'
-languageCode = 'en-us'
-title = 'digitowl'
-theme = 'papercss-hugo-theme'
+baseURL = "http://digitowl.io/"
+languageCode = "en-us"
+title = "digitowl"
+theme = "papercss-hugo-theme"
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+
+[taxonomies]
+  tag = "tags"
+
+[imaging]
+  quality = 99
+
+# To disable, set to an extremely large value, such as 999999
+paginate = 5
+
+[params]
+  homeMetaContent = "A Hugo theme made with PaperCSS, the less formal CSS framework."
+  # For more date formats see https://gohugo.io/functions/format/
+  dateFormat = "Jan 2, 2006"
+  navTitleLink = "/"
+
+[[menu.nav]]
+  name = "Blog"
+  url = "/"
+  weight = 1
+
+[[menu.nav]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 2
+
+[[menu.nav]]
+  name = "About"
+  url = "/about/"
+  weight = 3
+
+[[menu.nav]]
+  name = "RSS"
+  url = "/index.xml"
+  weight = 4
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xHTML = false
+  [markup.highlight]
+    codeFences = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 6
+    startLevel = 2
