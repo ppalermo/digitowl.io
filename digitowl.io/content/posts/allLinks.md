@@ -8,4 +8,7 @@ draft: false
 
 ####
 Inline-style: 
-![alt text](https://digitowl.io/digitowl.io/static/_media/owls.jpg" "Welcome")
+![alt text]("https://raw.githubusercontent.com/ppalermo/digitowl.io/main/digitowl.io/static/_media/owls.jpg" "Welcome")
+
+
+
