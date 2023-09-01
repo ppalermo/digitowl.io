@@ -20,7 +20,7 @@ paginate = 5
   showMenuItems = 2
 
   # show selector to switch language
-  showLanguageSelector = false
+  showLanguageSelector = true
 
   # set theme to full screen width
   fullWidthTheme = true
@@ -35,7 +35,7 @@ paginate = 5
 
   # set post to show the last updated
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = false
+  showLastUpdated = true
 
   # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
@@ -68,23 +68,21 @@ paginate = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "Terminal"
-    subtitle = "A simple, retro theme for Hugo"
+    title = "DigitOwl"
+    subtitle = "The new perspective"
     owner = ""
-    keywords = ""
+    keywords = "infosec,ai,LLM,DevSecOps"
     copyright = ""
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
     newerPosts = "Newer posts"
     olderPosts = "Older posts"
-    missingContentMessage = "Page not found..."
+    missingContentMessage = "Not found. Not yet."
     missingBackButtonLabel = "Back to home page"
-
     [languages.en.params.logo]
       logoText = "digitowl"
       logoHomeLink = "/"
-
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "about"
