@@ -14,13 +14,13 @@ paginate = 5
   contentTypeName = "posts"
 
   # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "orange"
+  themeColor = "pink"
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 2
 
   # show selector to switch language
-  showLanguageSelector = true
+  showLanguageSelector = false
 
   # set theme to full screen width
   fullWidthTheme = true
@@ -35,7 +35,7 @@ paginate = 5
 
   # set post to show the last updated
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = true
+  showLastUpdated = false
 
   # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
@@ -62,8 +62,8 @@ paginate = 5
   # set Twitter handles for Twitter cards
   # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
   # do not include @
-  creator = ""
-  site = ""
+  creator = "ppaler"
+  site = "https://digitowl.io"
 
 [languages]
   [languages.en]
@@ -71,7 +71,7 @@ paginate = 5
     title = "DigitOwl"
     subtitle = "The new perspective"
     owner = ""
-    keywords = "infosec,ai,LLM,DevSecOps"
+    keywords = "Infosec,GenIA,LLM,DevSecOps"
     copyright = ""
     menuMore = "Show more"
     readMore = "Read more"
