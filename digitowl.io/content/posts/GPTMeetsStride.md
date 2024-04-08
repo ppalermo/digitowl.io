@@ -1,7 +1,7 @@
 ---
 title: "GPTMeetsStride"
 date: 2024-01-15T10:18:40-05:00
-draft: true
+draft: false
 ---
 
 The Idea: Integrating Python Libraries for Advanced Threat Modeling with STRIDE GPT
