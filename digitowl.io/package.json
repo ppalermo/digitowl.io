@@ -1,0 +1,9 @@
+{
+  "name": "digitowl",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "scripts": {
+    "build": "hugo"
+  },
+  // add other necessary fields and dependencies
+}
