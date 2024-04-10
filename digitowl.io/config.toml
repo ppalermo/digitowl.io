@@ -1,100 +1,266 @@
-relativeURLs = true
-baseURL = "http://digitowl.io/"
-languageCode = "en-us"
-title = "digitowl"
+baseURL = "https://digitowl.io"
+title = "DigitOwl"
 theme = "meghna"
+# Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
+timeZone = "America/New_York"
+# post pagination
+paginate = 6 # see https://gohugo.io/extras/pagination/
+# post excerpt
+summaryLength = 15 # see https://gohugo.io/content-management/excerpts/
+# google analytics
+googleAnalytics = "UA-123456-78" # example: UA-123456-78, for more info, read the article https://support.google.com/analytics/answer/1008080?hl=en
+# disqus short name
+disqusShortname = "themefisher-template" # we use disqus to show comments in blog posts . To install disqus please follow this tutorial https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/
+# disable language
+disableLanguages = [
+] # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
+hasCJKLanguage = false #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 
-# Add it only if you keep the theme in the `themes` directory.
-# Remove it if you use the theme as a remote Hugo Module.
-paginate = 5
+############################# Build ##############################
+[build]
+noJSConfigInAssets = false
+useResourceCacheWhen = 'fallback'
+[build.buildStats]
+enable = true
+[[build.cachebusters]]
+source = 'assets/.*\.(js|ts|jsx|tsx)'
+target = '(js|scripts|javascript)'
+[[build.cachebusters]]
+source = 'assets/.*\.(css|sass|scss)$'
+target = '(css|styles|scss|sass)'
+[[build.cachebusters]]
+source = 'assets/.*\.(.*)$'
+target = '$1'
 
+############################# Outputs ##############################
+[outputs]
+home = ["HTML", "RSS"]
+
+############################# Imaging ##############################
+[imaging]
+# See https://github.com/disintegration/imaging
+# Default JPEG or WebP quality setting. Default is 75.
+quality = 90
+resampleFilter = "lanczos"
+
+############################# Caches ###############################
+[caches]
+[caches.images]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
+
+[caches.assets]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
+
+############################# Markup ###############################
+[markup]
+[markup.goldmark.renderer]
+unsafe = true
+
+############################# Plugins ##########################
+# css plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+[[params.plugins.css]]
+link = "plugins/magnific-popup/magnific-popup.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.css"
+[[params.plugins.css]]
+link = "https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,700&display=swap"
+
+# js plugins
+[[params.plugins.js]]
+link = "plugins/jquery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+link = "plugins/shuffle/shuffle.min.js"
+[[params.plugins.js]]
+link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
+[[params.plugins.js]]
+link = "plugins/lazy-load/lozad.min.js"
+[[params.plugins.js]]
+link = "plugins/google-map/map.js"
+
+################### English Navigation ########################
+[[Languages.en.menu.main]]
+name = "about"
+url = "#about"
+weight = 1
+
+[[Languages.en.menu.main]]
+name = "services"
+url = "#services"
+weight = 2
+
+[[Languages.en.menu.main]]
+name = "portfolio"
+url = "#portfolio"
+weight = 3
+
+[[Languages.en.menu.main]]
+name = "team"
+url = "#team"
+weight = 4
+
+[[Languages.en.menu.main]]
+name = "pricing"
+url = "#pricing"
+weight = 5
+
+[[Languages.en.menu.main]]
+name = "blog"
+url = "#blog"
+weight = 6
+
+[[Languages.en.menu.main]]
+name = "contact"
+url = "#contact"
+weight = 7
+
+
+[[Languages.en.menu.main]]
+name = "Dropdown"
+weight = 7
+hasChildren = true
+
+[[Languages.en.menu.main]]
+parent = "Dropdown"
+name = "Dropdown 1"
+url = "#"
+weight = 1
+
+[[Languages.en.menu.main]]
+parent = "Dropdown"
+name = "Dropdown 2"
+url = "#"
+weight = 2
+
+[[Languages.en.menu.main]]
+name = "themefisher"
+url = "https://themefisher.com/"
+weight = 8
+
+
+################### French Navigation ########################
+[[Languages.fr.menu.main]]
+name = "sur"
+url = "#about"
+weight = 1
+
+[[Languages.fr.menu.main]]
+name = "un service"
+url = "#services"
+weight = 2
+
+[[Languages.fr.menu.main]]
+name = "portefeuille"
+url = "#portfolio"
+weight = 3
+
+[[Languages.fr.menu.main]]
+name = "équipe"
+url = "#team"
+weight = 4
+
+[[Languages.fr.menu.main]]
+name = "tarification"
+url = "#pricing"
+weight = 5
+
+[[Languages.fr.menu.main]]
+name = "blog"
+url = "#blog"
+weight = 6
+
+[[Languages.fr.menu.main]]
+name = "contact"
+url = "#contact"
+weight = 7
+
+[[Languages.fr.menu.main]]
+name = "themefisher"
+url = "https://themefisher.com/"
+weight = 8
+
+############################# Default Parameters ##########################
 [params]
-  # dir name of your main content (default is `content/posts`).
-  # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "posts"
+logo = "images/logo.png"
+# Meta data
+description = "Responsive Multipurpose Parallax Hugo Template"
+author = "Themefisher"
+# Google Analytics
+google_analytics_id = "" # Your ID
+# post share
+post_share = true
 
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "blue"
+# preloader
+[params.preloader]
+enable = false
+preloader = "images/logo.png"
 
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+# cookies
+[params.cookies]
+enable = false
+expire_days = 2
 
-  # show selector to switch language
-  showLanguageSelector = false
+# google map
+[params.map]
+enable = false
+gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
+map_latitude = "51.5223477"
+map_longitude = "-0.1622023"
+map_marker = "images/marker.png"
 
-  # set theme to full screen width
-  fullWidthTheme = false
+############################# social icons ##########################
+[[params.social]]
+icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
+link = "#"
 
-  # center theme with default width
-  centerTheme = false
+[[params.social]]
+icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
+link = "#"
 
-  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
-  # then the file will be used as a cover automatically.
-  # With this option you don't have to put the `cover` param in a front-matter.
-  autoCover = true
+[[params.social]]
+icon = "ti-youtube" # themify icon pack : https://themify.me/themify-icons
+link = "#"
 
-  # set post to show the last updated
-  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = false
+[[params.social]]
+icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+link = "#"
 
-  # set a custom favicon (default is a `themeColor` square)
-  # favicon = "favicon.ico"
+[[params.social]]
+icon = "ti-dribbble" # themify icon pack : https://themify.me/themify-icons
+link = "#"
 
-  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
-  # updatedDatePrefix = "Updated"
-
-  # set all headings to their default size (depending on browser settings)
-  # oneHeadingSize = true # default
-
-  # whether to show a page's estimated reading time
-  # readingTime = false # default
-
-  # whether to show a table of contents
-  # can be overridden in a page's front-matter
-  Toc = false # default
-
-  # set title for the table of contents
-  # can be overridden in a page's front-matter
-  TocTitle = "Table of Contents" # default
+[[params.social]]
+icon = "ti-pinterest" # themify icon pack : https://themify.me/themify-icons
+link = "#"
 
 
-[params.twitter]
-  # set Twitter handles for Twitter cards
-  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
-  # do not include @
-  creator = "ppaler"
-  site = "https://digitowl.io"
+################################ English Language ########################
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
 
-[Params.Entry]
-  meta = ["date", "categories", "tags"]
+[Languages.en.params]
+weight = 1
+home = "Home"
+copyright = ""
 
-[Params.Breadcrumb]
-  enable = true
+################################ France Language ########################
+[Languages.fr]
+languageName = "Fr"
+languageCode = "fr-fr"
+contentDir = "content/french"
+weight = 2
 
-[languages]
-  [languages.en]
-    languageName = "English"
-    title = "DigitOwl"
-    subtitle = "The new perspective"
-    owner = ""
-    keywords = "Infosec,GenIA,LLM,DevSecOps"
-    copyright = ""
-    menuMore = "Show more"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
-    missingContentMessage = "Not found. Not yet."
-    missingBackButtonLabel = "Back to home page"
-    [languages.en.params.logo]
-      logoText = "digitowl"
-      logoHomeLink = "/"
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/pages/about"
-      [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Contact"
-        url = "/pages/contact"
+[Languages.fr.params]
+home = "Accueil"
+copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
