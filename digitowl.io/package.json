@@ -5,5 +5,4 @@
   "scripts": {
     "build": "hugo"
   },
-  // add other necessary fields and dependencies
 }
