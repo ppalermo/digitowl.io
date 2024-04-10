@@ -4,3 +4,6 @@
 [submodule "digitowl.io/themes/binario"]
 	path = digitowl.io/themes/binario
 	url = https://github.com/vimux/binario
+[submodule "digitowl.io/themes/meghna"]
+	path = digitowl.io/themes/meghna
+	url = https://github.com/themefisher/meghna-hugo.git
