@@ -1,0 +1,31 @@
+############################## Contact #############################
+contact:
+  enable : true
+  title : Contact Us
+  subtitle : Contact Details
+  content : Dive into a world where security meets innovation. At Digitowl, we're not just about solutions; we're about forging lasting partnerships. Whether you're seeking to fortify your digital landscape, innovate with confidence, or simply have a query about our services, we're here and ready to help.
+
+  # Contact details
+  contact_list:
+    - icon : ti-location-pin # themify icon pack : https://themify.me/themify-icons
+      info : "Planet Earth"
+      
+    - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+      info : "Phone: +Coming Up Soon"
+      
+    - icon : ti-printer # themify icon pack : https://themify.me/themify-icons
+      info : "Fax: + Nobody Uses Fax, they are very easy to hack"
+      
+    - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+      info : "Email: martin@digitowl.io"
+
+
+  # Contact form
+  contact_form:
+    enable : true
+    form_action : "#" #contact form works with https://formspree.io
+    name : "Your Name"
+    email : "Your Email"
+    subject : "Subject"
+    message : "Message"
+    submit : "Submit"

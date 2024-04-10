@@ -1,0 +1,16 @@
+############################# About ###################################
+about:
+  enable : true
+  title : About Us
+  about_item :
+  - icon : ti-shield # themify icon pack : https://themify.me/themify-icons
+    title : We Are Digital Guardians - Protecting Society in the Cyber Age
+    content : We expertly navigate, cultivate, and safeguard against cyber threats in our ever-evolving digital landscape. Our guidance empowers technology leaders, manufacturers, financial powerhouses, guardians of national infrastructure, retail giants, and governmental bodies worldwide. We're committed to fortifying businesses, protecting software, and securing personal data with unparalleled diligence and expertise.
+
+  - icon : ti-cup # themify icon pack : https://themify.me/themify-icons
+    title : We're Professional
+    content : We are professional elite, serving top Fortune 100 companies worldwide with a team of the most creative and skilled hackers. Our expertise in penetration testing ensures your defenses are robust, safeguarding your digital domain with unmatched precision and insight.
+
+  - icon : ti-rocket # themify icon pack : https://themify.me/themify-icons
+    title : We Are Passionate Innovators
+    content : Our passion drives our excellence, ensuring you'll appreciate the quality of our products and services. Every project reflects our commitment and expertise, aiming to surpass your expectations. At the core of our efforts is a love for innovation and security, guaranteeing that what we deliver is truly exceptional.
