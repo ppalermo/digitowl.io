@@ -1,3 +1,4 @@
-[submodule "digitowl.io/themes/terminal"]
-	path = digitowl.io/themes/terminal
-	url = https://github.com/panr/hugo-theme-terminal.git
+[submodule "digitowl.io/themes/meghna"]
+     path = digitowl.io/themes/meghna
+     url = https://github.com/ppalermo/meghna-hugo
+
