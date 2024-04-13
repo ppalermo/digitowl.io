@@ -4,8 +4,8 @@ banner:
   bg_image_webp : "images/backgrounds/Hero-Area2.webp"
   bg_image : "images/backgrounds/Hero-Area2.webp"
   icon : "" # themify icon pack : https://themify.me/themify-icons
-  title : "Experience the new reality"
-  content : "Lalala"
+  title : "Empower Your Future: Access Cutting-Edge Tech with Ease"
+  content : "United in Defense: Amplifying Cybersecurity for All"
   button:
     enable : true
     label : "Explore Us"
