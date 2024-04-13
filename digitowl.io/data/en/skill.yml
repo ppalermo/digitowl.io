@@ -3,24 +3,25 @@ skill:
   enable : true
   title : Our Skills
   subtitle : We’ve skilled in wide range of web and Other digital market tools.
-  content : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis magni explicabo cum aperiam recusandae sunt accusamus totam. Quidem quos fugiat sapiente numquam accusamus quas hic, itaque in libero reiciendis tempora!
+  content : At Digitowl, we merge technical mastery with innovative cybersecurity solutions. Our core strengths lie in meticulous penetration testing, AI-driven data protection, and rigorous web app security assessments. We champion secure coding practices through SSDLC training, infusing resilience into software development.
+            Armed with expertise in business strategy, precise analysis, and cross-platform development, our team crafts a cybersecurity shield that integrates seamlessly with your business operations, ensuring enduring digital safety.
   image : images/about/company-growth.webp
   skill_item :
     # skill item loop
-    - name :  Business Development
-      percent : 90%
-      
-    # skill item loop
-    - name :  Analysis
-      percent : 70%
-      
-    # skill item loop
-    - name :  Design
-      percent : 80%
-      
-    - name :  IOS Development
+    - name :  Cybersecurity
       percent : 95%
       
     # skill item loop
-    - name :  Android Development
+    - name :  AI/ML Data centric workloads
+      percent : 70%
+      
+    # skill item loop
+    - name :  Infrastructure hardening
+      percent : 80%
+      
+    - name :  Malware protection
+      percent : 95%
+      
+    # skill item loop
+    - name :  Mobile Development
       percent : 75%
