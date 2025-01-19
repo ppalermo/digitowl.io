@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
     if (!contactForm) return;
 
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
         // Get form elements
         const nameInput = document.getElementById('name');
         const emailInput = document.getElementById('email');
@@ -13,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Basic validation
         if (!nameInput.value || !emailInput.value || !subjectInput.value || !messageInput.value) {
-            e.preventDefault();
             showMessage('error', 'Please fill in all fields');
             return;
         }
@@ -21,14 +22,43 @@ document.addEventListener('DOMContentLoaded', function() {
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(emailInput.value)) {
-            e.preventDefault();
             showMessage('error', 'Please enter a valid email address');
             return;
         }
 
-        // Disable submit button
+        // Disable submit button and show loading state
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nameInput.value,
+                    _replyto: emailInput.value,
+                    _subject: subjectInput.value,
+                    message: messageInput.value
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                showMessage('success', 'Thank you! Your message has been sent successfully.');
+                contactForm.reset();
+            } else {
+                throw new Error(result.error || 'Failed to send message');
+            }
+        } catch (error) {
+            showMessage('error', 'Sorry, there was an error sending your message. Please try again later.');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit';
+        }
     });
 
     function showMessage(type, message) {

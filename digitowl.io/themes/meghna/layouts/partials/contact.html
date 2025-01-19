@@ -51,6 +51,8 @@
 						<textarea rows="6" placeholder="{{ .message }}" class="form-control" name="message" id="message"></textarea>
 					</div>
 					<input type="text" name="_gotcha" style="display:none">
+					<input type="hidden" name="_next" value="/#contact">
+					<input type="hidden" name="_format" value="json">
 					<div id="cf-submit">
 						<button type="submit" id="contact-submit" class="btn btn-transparent btn-block">{{ .submit }}</button>
 					</div>
