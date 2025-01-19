@@ -412,6 +412,22 @@ a:hover {
   margin-bottom: 0;
 }
 
+.navbar-brand {
+  padding: 5px 0;
+}
+
+.navbar-brand img {
+  height: 42px;
+  width: auto;
+  filter: brightness(0.95) contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  filter: brightness(1) contrast(1.2);
+  transform: scale(1.05);
+}
+
 .navbar-dark .navbar-nav .active>.nav-link,
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link.show,
