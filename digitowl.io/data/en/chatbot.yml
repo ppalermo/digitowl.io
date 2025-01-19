@@ -1,0 +1,7 @@
+##################################### Chatbot #####################################
+chatbot:
+  enable: true
+  title: "AI Solution Finder"
+  subtitle: "Let Our AI Assistant Help You"
+  bg_image: "images/backgrounds/corebackground.jpg"
+  prompt_text: "Do you have a crazy problem that you haven't been able to solve and keeps you up at night? Do you want to consult our AI assistant to see if we have built a similar solution already? Try it! Just use natural language to describe the problem you want to solve and I will let you know if we have a solution for you." 

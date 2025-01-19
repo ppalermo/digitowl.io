@@ -1,0 +1,197 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.chatbot.chatbot.enable }}
+{{ with $data.chatbot.chatbot }}
+{{"<!-- Chatbot Section -->" | safeHTML}}
+<section id="chatbot" class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="title text-center">
+                    <h2>{{ .title | markdownify }}</h2>
+                    <div class="border-meghna"></div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="chatbot-container">
+                    <div class="prompt-text mb-4">
+                        {{ .prompt_text | markdownify }}
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Messages will appear here -->
+                    </div>
+                    <div class="chat-input-container">
+                        <textarea id="userInput" class="form-control" rows="3" placeholder="Describe your problem..."></textarea>
+                        <button id="sendMessage" class="btn btn-main mt-3">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Chatbot Styles -->
+<style>
+.chatbot-container {
+    background: rgba(41, 47, 54, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.user-message {
+    background: rgba(87, 203, 204, 0.2);
+    margin-left: 2rem;
+}
+
+.bot-message {
+    background: rgba(255, 255, 255, 0.1);
+    margin-right: 2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-input-container {
+    position: relative;
+}
+
+#userInput {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(87, 203, 204, 0.3);
+}
+
+#userInput:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #57cbcc;
+    box-shadow: 0 0 0 0.2rem rgba(87, 203, 204, 0.25);
+}
+
+.thinking {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #57cbcc;
+    font-style: italic;
+}
+
+.dot-typing {
+    position: relative;
+    left: -9999px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #57cbcc;
+    color: #57cbcc;
+    box-shadow: 9984px 0 0 0 #57cbcc, 9999px 0 0 0 #57cbcc, 10014px 0 0 0 #57cbcc;
+    animation: dotTyping 1.5s infinite linear;
+}
+
+@keyframes dotTyping {
+    0% { box-shadow: 9984px 0 0 0 #57cbcc, 9999px 0 0 0 #57cbcc, 10014px 0 0 0 #57cbcc; }
+    16.667% { box-shadow: 9984px -10px 0 0 #57cbcc, 9999px 0 0 0 #57cbcc, 10014px 0 0 0 #57cbcc; }
+    33.333% { box-shadow: 9984px 0 0 0 #57cbcc, 9999px 0 0 0 #57cbcc, 10014px 0 0 0 #57cbcc; }
+    50% { box-shadow: 9984px 0 0 0 #57cbcc, 9999px -10px 0 0 #57cbcc, 10014px 0 0 0 #57cbcc; }
+    66.667% { box-shadow: 9984px 0 0 0 #57cbcc, 9999px 0 0 0 #57cbcc, 10014px 0 0 0 #57cbcc; }
+    83.333% { box-shadow: 9984px 0 0 0 #57cbcc, 9999px 0 0 0 #57cbcc, 10014px -10px 0 0 #57cbcc; }
+    100% { box-shadow: 9984px 0 0 0 #57cbcc, 9999px 0 0 0 #57cbcc, 10014px 0 0 0 #57cbcc; }
+}
+</style>
+
+<!-- Chatbot Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chatMessages = document.getElementById('chatMessages');
+    const userInput = document.getElementById('userInput');
+    const sendButton = document.getElementById('sendMessage');
+
+    function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+        messageDiv.textContent = message;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function addThinkingIndicator() {
+        const thinkingDiv = document.createElement('div');
+        thinkingDiv.className = 'thinking';
+        thinkingDiv.innerHTML = 'Searching our solutions database <div class="dot-typing"></div>';
+        chatMessages.appendChild(thinkingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return thinkingDiv;
+    }
+
+    async function processUserInput() {
+        const message = userInput.value.trim();
+        if (!message) return;
+
+        // Clear input
+        userInput.value = '';
+
+        // Add user message
+        addMessage(message, true);
+
+        // Add thinking indicator
+        const thinkingIndicator = addThinkingIndicator();
+
+        try {
+            // Make the API call to your serverless function
+            const response = await fetch('/.netlify/functions/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message })
+            });
+
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const data = await response.json();
+
+            // Remove thinking indicator
+            thinkingIndicator.remove();
+
+            // Add bot response
+            addMessage(data.response);
+
+        } catch (error) {
+            console.error('Error:', error);
+            thinkingIndicator.remove();
+            addMessage('I apologize, but I encountered an error while processing your request. Please try again.');
+        }
+    }
+
+    // Event listeners
+    sendButton.addEventListener('click', processUserInput);
+    userInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            processUserInput();
+        }
+    });
+});
+</script>
+{{"<!-- /Chatbot Section -->" | safeHTML}}
+{{ end }}
+{{ end }} 

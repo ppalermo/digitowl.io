@@ -9,15 +9,23 @@
       <div class="col-12">
         {{"<!-- section title -->" | safeHTML}}
         <div class="title text-center wow fadeInDown">
-          <h2>{{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
-              {{ with i18n "blogTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }}</span></h2>
+          <h2>{{ site.Data.en.blog.title | safeHTML }}</h2>
           <div class="border-meghna"></div>
         </div>
       </div>
       {{"<!-- /section title -->" | safeHTML}}
       {{ $paginator := .Paginate .Data.Pages }}
       {{ range $paginator.Pages }}
-      {{ .Render "article" }}
+      <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4">
+        <div class="post-block">
+          <div class="content">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p class="text-muted">{{ .Date.Format "January 2, 2006" }}</p>
+            <p>{{ .Summary }}</p>
+            <a class="btn btn-transparent" href="{{ .Permalink }}">Read More</a>
+          </div>
+        </div>
+      </article>
       {{ end }}
       <div class="col-12">
         {{ template "_internal/pagination.html" . }}

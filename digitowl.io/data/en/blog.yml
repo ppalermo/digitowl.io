@@ -1,0 +1,6 @@
+################################# Latest Blog ########################
+blog:
+  enable : true
+  title : Latest Insights
+  subtitle : Cybersecurity Knowledge Base
+  hide_from_nav: true  # This will keep it from showing in the main navigation 

@@ -1,9 +1,15 @@
 {
-  "name": "digitowl",
+  "name": "digitowl-website",
   "version": "1.0.0",
-  "description": "Your project description",
+  "description": "DigitOwl Cybersecurity Consulting Website",
   "scripts": {
-    "build": "hugo"
+    "start": "netlify dev"
   },
-  "dependencies": {}
+  "dependencies": {
+    "openai": "^3.2.1"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^1.6.0",
+    "netlify-cli": "^12.0.0"
+  }
 }
