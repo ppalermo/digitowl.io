@@ -1,8 +1,0 @@
-{
-  "name": "digitowl-functions",
-  "version": "1.0.0",
-  "description": "Netlify Functions for DigitOwl",
-  "dependencies": {
-    "openai": "3.3.0"
-  }
-} 
