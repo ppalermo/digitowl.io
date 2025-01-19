@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "DigitOwl Cybersecurity Consulting Website",
   "scripts": {
-    "start": "netlify dev"
+    "start": "netlify dev",
+    "build": "npm install"
   },
   "dependencies": {
-    "openai": "^3.2.1"
+    "openai": "3.3.0"
   },
   "devDependencies": {
-    "@netlify/functions": "^1.6.0",
-    "netlify-cli": "^12.0.0"
+    "@netlify/functions": "1.6.0",
+    "netlify-cli": "12.14.0"
   }
 }

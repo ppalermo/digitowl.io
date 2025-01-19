@@ -1,0 +1,17 @@
+# Hugo
+public/
+resources/
+.hugo_build.lock
+
+# Node
+node_modules/
+.env
+.env.*
+
+# Netlify
+.netlify/
+.netlify/functions-serve/
+
+# OS
+.DS_Store
+Thumbs.db 
