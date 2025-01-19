@@ -1,11 +1,11 @@
 ############################# call to action ##############################
 cta:
   enable : true
-  bg_image : "images/backgrounds/bg-white-wall.jpg"
-  bg_image_webp : "images/backgrounds/bg-white-wall.webp"
-  title : "Great Design & Incredible Features"
-  content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur odio impedit incidunt? Omnis accusantium ea reiciendis, fugit commodi nostrum."
+  bg_image : "images/backgrounds/bg-cybersecurity.jpg"
+  bg_image_webp : "images/backgrounds/bg-cybersecurity.webp"
+  title : "Protect Your Digital Assets Today"
+  content : "Don't wait for a security breach to think about cybersecurity. Our team of experts is ready to help you identify vulnerabilities, strengthen your defenses, and protect your business from evolving cyber threats."
   button:
     enable : true
-    label : "Start a project with us"
+    label : "Schedule a Security Assessment"
     link : "#contact"

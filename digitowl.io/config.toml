@@ -10,7 +10,7 @@ summaryLength = 15 # see https://gohugo.io/content-management/excerpts/
 # google analytics
 googleAnalytics = "UA-123456-78" # example: UA-123456-78, for more info, read the article https://support.google.com/analytics/answer/1008080?hl=en
 # disqus short name
-disqusShortname = "themefisher-template" # we use disqus to show comments in blog posts . To install disqus please follow this tutorial https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/
+disqusShortname = "" # we use disqus to show comments in blog posts
 # disable language
 disableLanguages = [
 ] # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
@@ -99,53 +99,9 @@ url = "#services"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "portfolio"
-url = "#portfolio"
-weight = 3
-
-[[Languages.en.menu.main]]
-name = "team"
-url = "#team"
-weight = 4
-
-[[Languages.en.menu.main]]
-name = "pricing"
-url = "#pricing"
-weight = 5
-
-[[Languages.en.menu.main]]
-name = "blog"
-url = "#blog"
-weight = 6
-
-[[Languages.en.menu.main]]
 name = "contact"
 url = "#contact"
-weight = 7
-
-
-[[Languages.en.menu.main]]
-name = "Dropdown"
-weight = 7
-hasChildren = true
-
-[[Languages.en.menu.main]]
-parent = "Dropdown"
-name = "Dropdown 1"
-url = "#"
-weight = 1
-
-[[Languages.en.menu.main]]
-parent = "Dropdown"
-name = "Dropdown 2"
-url = "#"
-weight = 2
-
-[[Languages.en.menu.main]]
-name = "themefisher"
-url = "https://themefisher.com/"
-weight = 8
-
+weight = 3
 
 ################### French Navigation ########################
 [[Languages.fr.menu.main]]
@@ -159,41 +115,16 @@ url = "#services"
 weight = 2
 
 [[Languages.fr.menu.main]]
-name = "portefeuille"
-url = "#portfolio"
-weight = 3
-
-[[Languages.fr.menu.main]]
-name = "équipe"
-url = "#team"
-weight = 4
-
-[[Languages.fr.menu.main]]
-name = "tarification"
-url = "#pricing"
-weight = 5
-
-[[Languages.fr.menu.main]]
-name = "blog"
-url = "#blog"
-weight = 6
-
-[[Languages.fr.menu.main]]
 name = "contact"
 url = "#contact"
-weight = 7
-
-[[Languages.fr.menu.main]]
-name = "themefisher"
-url = "https://themefisher.com/"
-weight = 8
+weight = 3
 
 ############################# Default Parameters ##########################
 [params]
 logo = "images/logo3.webp"
 # Meta data
-description = "Responsive Multipurpose Parallax Hugo Template"
-author = "Themefisher"
+description = "DigitOwl - Cybersecurity Consulting Services"
+author = "DigitOwl"
 # Google Analytics
 google_analytics_id = "" # Your ID
 # post share
@@ -219,19 +150,15 @@ map_marker = "images/marker.png"
 
 ############################# social icons ##########################
 [[params.social]]
-icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
+icon = "ti-linkedin" # themify icon pack
 link = "#"
 
 [[params.social]]
-icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
+icon = "ti-twitter-alt" # themify icon pack
 link = "#"
 
 [[params.social]]
 icon = "ti-youtube" # themify icon pack : https://themify.me/themify-icons
-link = "#"
-
-[[params.social]]
-icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
 link = "#"
 
 [[params.social]]
@@ -248,11 +175,9 @@ link = "#"
 languageName = "En"
 languageCode = "en-us"
 contentDir = "content/english"
-
-[Languages.en.params]
 weight = 1
 home = "Home"
-copyright = ""
+copyright = "Copyright &copy; 2024 DigitOwl. All rights reserved."
 
 ################################ France Language ########################
 [Languages.fr]

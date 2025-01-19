@@ -1,27 +1,27 @@
 ############################# feature ###################################
 feature:
   enable : true
-  image : images/about/about-business-man.jpg
-  image_webp : images/about/about-business-man.webp
-  title : We’re A Digital Design Agency.
-  content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempora itaque, autem dolores culpa cum mollitia voluptate nesciunt voluptatibus quasi."
+  image : images/backgrounds/cybersecurity-team.jpg
+  image_webp : images/backgrounds/cybersecurity-team.jpg
+  title : "Securing Your Digital Future"
+  content : "In today's interconnected world, cybersecurity isn't just an IT concern—it's a business imperative. We provide comprehensive security solutions that protect your assets, data, and reputation in an ever-evolving threat landscape."
   feature_item : 
       # feature item loop
-    - title : SEO Optimized
-      icon : ti-world # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : Penetration Testing
+      icon : ti-shield # themify icon pack : https://themify.me/themify-icons
+      content : Our expert team identifies vulnerabilities in your systems before malicious actors do, ensuring robust security through thorough testing and assessment.
       
       # feature item loop
-    - title : Easy Customization
-      icon : ti-panel # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : AI/ML Security
+      icon : ti-thought # themify icon pack : https://themify.me/themify-icons
+      content : Specialized in securing artificial intelligence and machine learning systems, protecting your innovative technologies from emerging threats.
 
       # feature item loop
-    - title : SEO Optimized
-      icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : Security Training
+      icon : ti-user # themify icon pack : https://themify.me/themify-icons
+      content : Empower your team with comprehensive security awareness and technical training, building a strong human firewall.
       
       # feature item loop
-    - title : Easy Customization
-      icon : ti-announcement # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : Compliance & Auditing
+      icon : ti-check-box # themify icon pack : https://themify.me/themify-icons
+      content : Navigate complex regulatory requirements with our expertise in security compliance, auditing, and risk assessment.
