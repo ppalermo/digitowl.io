@@ -4,13 +4,13 @@ about:
   title : About Us
   about_item :
   - icon : ti-shield # themify icon pack : https://themify.me/themify-icons
-    title : We Are Digital Guardians - Protecting Society in the Cyber Age
-    content : We expertly navigate, cultivate, and safeguard against cyber threats in our ever-evolving digital landscape. Our guidance empowers technology leaders, manufacturers, financial powerhouses, guardians of national infrastructure, retail giants, and governmental bodies worldwide. We're committed to fortifying businesses, protecting software, and securing personal data with unparalleled diligence and expertise.
+    title : Digital Guardians & AI Innovators
+    content : We are elite cybersecurity experts and AI innovators who understand that true digital transformation requires both innovation and protection. Our unique approach combines cutting-edge AI solutions with robust security practices, enabling organizations to automate securely and transform confidently. We don't just protect your assets—we help you revolutionize how you operate.
 
-  - icon : ti-cup # themify icon pack : https://themify.me/themify-icons
-    title : We're Professional
-    content : We are professional elite, serving top Fortune 100 companies worldwide with a team of the most creative and skilled hackers. Our expertise in penetration testing ensures your defenses are robust, safeguarding your digital domain with unmatched precision and insight.
+  - icon : ti-pulse # themify icon pack : https://themify.me/themify-icons
+    title : Security-First AI Transformation
+    content : Our network of security professionals and ethical hackers have mastered the art of AI integration. We deploy intelligent automation that reduces operational burden while maintaining ironclad security. From threat detection to process automation, our AI solutions work alongside your team, handling routine tasks securely while empowering them to focus on strategic initiatives.
 
-  - icon : ti-rocket # themify icon pack : https://themify.me/themify-icons
-    title : We Are Passionate Innovators
-    content : Our passion drives our excellence, ensuring you'll appreciate the quality of our products and services. Every project reflects our commitment and expertise, aiming to surpass your expectations. At the core of our efforts is a love for innovation and security, guaranteeing that what we deliver is truly exceptional.
+  - icon : ti-thought # themify icon pack : https://themify.me/themify-icons
+    title : Empowering Through Education
+    content : We believe in democratizing AI knowledge while prioritizing security. Our comprehensive training programs help your team understand and leverage AI safely, ensuring they can innovate confidently within secure boundaries. Whether it's AI implementation or security assessments, we provide the expertise and education needed to transform your organization securely.
