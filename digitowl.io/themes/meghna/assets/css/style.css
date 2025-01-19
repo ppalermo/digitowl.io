@@ -565,16 +565,37 @@ a:hover {
 /*=================================================================
   About us section
 ==================================================================*/
+.about {
+  background-image: url("../../../static/images/backgrounds/aboutusbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.about:before {
+  content: '';
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .about .block {
-  background: #242930;
+  background: rgba(36, 41, 48, 0.9);
   padding: 30px;
   border-bottom: 2px solid transparent;
   transition: .5s all;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .about .block:hover {
   border-bottom: 2px solid #57cbcc;
+  background: rgba(36, 41, 48, 0.95);
 }
 
 .about .block:hover .icon-box {
