@@ -1,13 +1,14 @@
 [build]
-  command = "npm install"
+  command = "npm install --ignore-scripts"
   publish = "public"
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_FLAGS = "--no-optional"
 
 [functions]
-  node_bundler = "esbuild"
+  node_bundler = "nft"
   external_node_modules = ["openai"]
   included_files = ["netlify/functions/package.json"]
 

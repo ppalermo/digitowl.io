@@ -4,13 +4,17 @@
   "description": "DigitOwl Cybersecurity Consulting Website",
   "scripts": {
     "start": "netlify dev",
-    "build": "npm install"
+    "build": "npm install --ignore-scripts"
   },
   "dependencies": {
     "openai": "3.3.0"
   },
   "devDependencies": {
     "@netlify/functions": "1.6.0",
-    "netlify-cli": "12.14.0"
+    "netlify-cli": "12.14.0",
+    "esbuild": "0.17.19"
+  },
+  "overrides": {
+    "esbuild": "0.17.19"
   }
 }
