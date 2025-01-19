@@ -566,7 +566,7 @@ a:hover {
   About us section
 ==================================================================*/
 .about {
-  background-image: url("../../../static/images/backgrounds/aboutusbg.jpg");
+  background-image: url("/images/backgrounds/aboutusbg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
