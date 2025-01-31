@@ -2,6 +2,9 @@
 title: "The Future of Threat Modeling: Leveraging Generative AI"
 date: 2023-07-23T16:51:27-07:00
 draft: false
+tags: ["AI", "Security", "Threat Modeling"]
+categories: ["Security"]
+description: "Exploring how Generative AI can revolutionize threat modeling processes and enhance cybersecurity practices."
 ---
 
 ## Introduction
