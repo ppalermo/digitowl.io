@@ -4,7 +4,8 @@
   "description": "DigitOwl Cybersecurity Consulting Website",
   "scripts": {
     "start": "netlify dev",
-    "build": "npm install --no-optional --no-audit --platform=linux --no-shrinkwrap"
+    "build": "npm install --no-optional --no-audit --platform=linux --no-shrinkwrap",
+    "install": "npm install --no-optional"
   },
   "dependencies": {
     "openai": "3.3.0"
