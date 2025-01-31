@@ -5,7 +5,7 @@
   "scripts": {
     "start": "netlify dev",
     "build": "npm install --no-optional --no-audit --platform=linux --no-shrinkwrap",
-    "install": "npm install --no-optional"
+    "install": "npm install --no-optional --platform=linux --arch=x64"
   },
   "dependencies": {
     "openai": "3.3.0"
@@ -13,5 +13,9 @@
   "devDependencies": {
     "@netlify/functions": "1.6.0",
     "netlify-cli": "12.14.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
