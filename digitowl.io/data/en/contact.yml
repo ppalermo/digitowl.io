@@ -8,13 +8,13 @@ contact:
   # Contact details
   contact_list:
     - icon : ti-location-pin # themify icon pack : https://themify.me/themify-icons
-      info : "Planet Earth"
+      info : "Virtual offices serving clients globally"
       
     - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
       info : "Phone: +Coming Up Soon"
       
     - icon : ti-printer # themify icon pack : https://themify.me/themify-icons
-      info : "Fax: + Nobody Uses Fax, they are very easy to hack"
+      info : "Coming Soon"
       
     - icon : ti-email # themify icon pack : https://themify.me/themify-icons
       info : "Email: martin@digitowl.io"
