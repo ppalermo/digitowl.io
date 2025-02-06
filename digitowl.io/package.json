@@ -1,0 +1,13 @@
+{
+  "name": "digitowl-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hugo --minify",
+    "dev": "hugo server",
+    "clean": "rm -rf public resources"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

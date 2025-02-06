@@ -11,4 +11,34 @@
   word-break: break-all; /* Breaks long URLs */
   display: inline-block; /* Helps with link wrapping */
   max-width: 100%; /* Ensures links don't overflow */
+}
+
+/* Careers Page Styles */
+.career-message {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.career-message .lead {
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.career-message ul {
+    margin-top: 20px;
+    color: #fff;
+}
+
+.career-message ul li {
+    padding: 8px 0;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.section-heading {
+    color: #fff;
+    margin-bottom: 30px;
 } 
