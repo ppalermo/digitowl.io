@@ -3,7 +3,7 @@ title: "Careers"
 description: "Join Our Team"
 menu:
   main:
-    weight: 90
+    weight: 5
 ---
 
 <div class="container">
