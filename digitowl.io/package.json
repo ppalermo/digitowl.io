@@ -1,0 +1,23 @@
+{
+  "name": "digitowl-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hugo --minify",
+    "dev": "hugo server",
+    "clean": "rm -rf public resources",
+    "deploy": "hugo --minify && wrangler pages deploy public"
+  },
+  "dependencies": {
+    "hugo-extended": "0.120.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "overrides": {
+    "@esbuild/android-arm": "0.16.17"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 
