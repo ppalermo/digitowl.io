@@ -10,8 +10,8 @@ draft: false
 
 * https://github.com/cckuailong/awesome-gpt-security
 
-* https://learning.oreilly.com/library/view/deep-reinforcement-learning/9781484268094/
+* https://bit.ly/3WNRS9d
 
-* https://read.amazon.com/kp/kshare?asin=B06XNKV5TS&id=bpz2xprebbgoxmurafeosjccdi&reshareId=TEAA91MG7113VVXT8JWN&reshareChannel=system
+* http://bit.ly/3EsyEQ8
 
-* https://read.amazon.com/kp/kshare?asin=B07ZKDLZCR&id=bqvb2u5cbbhr3lpxrsbo4qwqvu&reshareId=Y5VVPRE06PPKFYD1CHHC&reshareChannel=system
+* https://bit.ly/4aRH6EK
