@@ -4,9 +4,17 @@
   "private": true,
   "scripts": {
     "build": "hugo --minify",
-    "dev": "hugo server"
+    "dev": "hugo server",
+    "clean": "rm -rf public resources",
+    "deploy": "hugo --minify && wrangler pages deploy public"
   },
   "dependencies": {
     "hugo-extended": "0.120.0"
+  },
+  "devDependencies": {
+    "@cloudflare/wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
