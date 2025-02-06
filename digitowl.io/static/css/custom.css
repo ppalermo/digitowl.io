@@ -1,0 +1,14 @@
+/* Add this to handle long URLs and text in blog posts */
+.post-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%; /* Ensures content doesn't overflow container */
+}
+
+/* Additional styling for links specifically */
+.post-content a {
+  word-break: break-all; /* Breaks long URLs */
+  display: inline-block; /* Helps with link wrapping */
+  max-width: 100%; /* Ensures links don't overflow */
+} 
