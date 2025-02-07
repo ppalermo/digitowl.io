@@ -1,4 +1,5 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
 
 {{ with $data.feature }}
 {{ if .enable }}
@@ -13,13 +14,16 @@
 				</div>
 			</div>
 			{{ range .feature_item }}
-			<div class="col-lg-4 col-md-6 mt-5">
-				<div class="feature-card wow fadeInUp" data-wow-delay=".3s">
-					<div class="feature-icon mb-4">
+			<div class="col-lg-4 col-md-6 mt-5 wow fadeInUp" data-wow-delay=".3s">
+				<div class="feature-card">
+					<div class="feature-icon">
 						<i class="{{ .icon }}"></i>
 					</div>
-					<h3 class="mb-3">{{ .title | markdownify }}</h3>
-					<p>{{ .content | markdownify }}</p>
+					<div class="feature-content">
+						<h3>{{ .title | markdownify }}</h3>
+						<p>{{ .content | markdownify }}</p>
+					</div>
+					<div class="feature-bg-shape"></div>
 				</div>
 			</div>
 			{{ end }}

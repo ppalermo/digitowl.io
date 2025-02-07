@@ -169,15 +169,73 @@
 .feature-card {
     background: rgba(255, 255, 255, 0.02);
     border-radius: 15px;
-    padding: 2rem;
-    transition: all 0.3s ease;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-icon i {
+    background: linear-gradient(45deg, #57cbcc, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon i {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.feature-content {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-content h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.feature-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.feature-bg-shape {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(87, 203, 204, 0.05) 0%, rgba(46, 204, 113, 0) 70%);
+    transform: rotate(-15deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.feature-card:hover .feature-bg-shape {
+    opacity: 1;
+    transform: rotate(0deg);
 }
 
 /* Modern Navigation Styles */
@@ -236,12 +294,41 @@
 
 /* Existing Careers Styles with updates */
 #careers {
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.95));
+    background: rgba(0, 0, 0, 0.95);
+    padding: 100px 0;
 }
 
 #careers .career-message {
     background: rgba(255, 255, 255, 0.02);
+    padding: 40px;
+    border-radius: 8px;
+    margin: 30px 0;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+#careers .career-message:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#careers .lead {
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.6;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+#careers img {
+    max-width: 400px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#careers img:hover {
+    transform: scale(1.02);
 }
 
 /* Animation Classes */
@@ -297,15 +384,6 @@
     width: 70px;
     margin: 0 auto;
     margin-bottom: 40px;
-}
-
-#careers .career-message:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-#careers img:hover {
-    transform: scale(1.02);
 }
 
 /* Enhanced Card Animations */
@@ -409,4 +487,182 @@ html {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Navigation Enhancements */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: #57cbcc;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Button Enhancements */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Hero Area Enhancements */
+.hero-area {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.8));
+    z-index: 1;
+}
+
+.hero-area .block {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-area h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero-area p {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.btn-transparent {
+    border: 2px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.btn-transparent:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Navigation Refinements */
+.navigation {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-brand img {
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+/* Section Title Improvements */
+.title {
+    margin-bottom: 60px;
+}
+
+.title h2 {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.title h2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #57cbcc;
+    transform: translateX(-50%);
+}
+
+/* Smooth Animations */
+.wow {
+    visibility: hidden;
+}
+
+.fadeInUp {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(45deg, #57cbcc, #2ecc71);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(87, 203, 204, 0.3);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(87, 203, 204, 0.4);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-top i {
+    transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover i {
+    transform: translateY(-2px);
 } 
