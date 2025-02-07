@@ -1,25 +1,39 @@
-{{ $data := index site.Data site.Language.Lang }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
 
 {{ if $data.banner.banner.enable }}
 {{ with $data.banner.banner }}
 {{"<!-- Welcome Slider-->" | safeHTML}}
-<section class="hero-area" style='background-image: url("{{ .bg_image_webp | absURL }}")'>
-	<!-- this image is for trigger this section fallback background image -->
-	<img class="d-none" src="{{ .bg_image_webp | absURL }}" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .bg_image | absURL }})'"/>
-
-	<div class="block">
-		{{ if .icon }}
-		<div class="video-button">
-			<i class="{{ .icon }}"></i>
+<section class="hero-section" id="home">
+	<div class="container">
+		<div class="row justify-content-center align-items-center min-vh-100">
+			<div class="col-lg-8 text-center">
+				<div class="hero-content wow fadeInUp" data-wow-delay=".3s">
+					<h1 class="hero-title mb-4">
+						{{ .title | markdownify }}
+						{{ if .gradient_text }}
+						<span class="gradient-text">{{ .gradient_text }}</span>
+						{{ end }}
+					</h1>
+					<p class="hero-subtitle mb-5">{{ .content | markdownify }}</p>
+					<div class="hero-buttons">
+						{{ if .button.enable }}
+						{{ with .button }}
+						<a href="{{ .link }}" class="btn btn-primary btn-lg me-3">{{ .label }}</a>
+						{{ end }}
+						{{ end }}
+						{{ if .button2.enable }}
+						{{ with .button2 }}
+						<a href="{{ .link }}" class="btn btn-outline-light btn-lg">{{ .label }}</a>
+						{{ end }}
+						{{ end }}
+					</div>
+				</div>
+			</div>
 		</div>
-		{{ end }}
-		<h1>{{ .title | markdownify }}</h1>
-		<p>{{ .content | markdownify }}</p>
-		{{ if .button.enable }}
-		{{ with .button }}
-		<a href="{{ .link }}" class="btn btn-transparent page-scroll">{{ .label }}</a>
-		{{ end }}
-		{{ end }}
+	</div>
+	<div class="hero-background">
+		<div class="gradient-overlay"></div>
+		<div class="pattern-overlay"></div>
 	</div>
 </section>
 {{"<!-- /Welcome Slider-->" | safeHTML}}

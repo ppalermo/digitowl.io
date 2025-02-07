@@ -63,3 +63,30 @@
 	})(jQuery);
 </script>
 {{ end }}
+
+<!-- Scroll to top button -->
+<button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+	<i class="ti-arrow-up"></i>
+</button>
+
+<!-- Custom scroll to top script -->
+<script>
+	const scrollBtn = document.getElementById('scrollToTop');
+	
+	// Show/hide button based on scroll position
+	window.addEventListener('scroll', () => {
+		if (window.pageYOffset > 300) {
+			scrollBtn.classList.add('show');
+		} else {
+			scrollBtn.classList.remove('show');
+		}
+	});
+	
+	// Smooth scroll to top
+	scrollBtn.addEventListener('click', () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	});
+</script>
