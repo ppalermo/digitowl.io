@@ -107,6 +107,11 @@ name = "Blog"
 url = "/blog/"
 weight = 4
 
+[[Languages.en.menu.main]]
+name = "Careers"
+url = "#careers"
+weight = 5
+
 ############################# Default Parameters ##########################
 [params]
 logo = "images/logo3.webp"
