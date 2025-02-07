@@ -1,33 +1,28 @@
 {{"<!-- Fixed Navigation -->" | safeHTML}}
-<header class="navigation fixed-top">
+<section class="sticky-top navigation">
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-				{{ if .Site.Params.logo }}
-				<img class="lozad" data-src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" height="40">
+				{{ if site.Params.logo }}
+				<img class="lozad" data-src="{{ site.Params.logo | absURL }}" alt="{{ .Site.Title }}" loading="eager">
 				{{ else }}
-				{{ .Site.Title }}
+				{{ site.Title }}
 				{{ end }}
 			</a>
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarNav">
+			<div class="collapse navbar-collapse" id="navigation">
 				<ul class="navbar-nav ml-auto">
-					{{ range .Site.Menus.main }}
+					{{ range site.Menus.main }}
 					<li class="nav-item">
-						<a class="nav-link hover-underline" href="{{ .URL | relLangURL }}">
-							{{ .Name }}
-						</a>
+						<a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
 					</li>
 					{{ end }}
-					<li class="nav-item">
-						<a href="#contact" class="nav-link btn btn-primary-outline">Get Started</a>
-					</li>
 				</ul>
 			</div>
 		</nav>
 	</div>
-</header>
+</section>
