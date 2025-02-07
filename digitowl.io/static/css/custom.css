@@ -45,7 +45,7 @@
 
 /* Careers Section Styles */
 #careers {
-    background: rgba(0, 0, 0, 0.9);
+    background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95));
     padding: 100px 0;
 }
 
@@ -57,9 +57,9 @@
     transition: all 0.3s ease;
 }
 
-#careers .career-message:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+#careers .quote-container {
+    position: relative;
+    padding: 20px;
 }
 
 #careers .lead {
@@ -67,11 +67,34 @@
     font-weight: 300;
     line-height: 1.6;
     margin-bottom: 30px;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #careers img {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+#careers .title h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#careers .border-meghna {
+    border-top: 2px solid #57cbcc;
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+#careers .career-message:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 #careers img:hover {
