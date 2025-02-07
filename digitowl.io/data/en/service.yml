@@ -1,0 +1,28 @@
+################################# Service #################################
+enable : true
+title : Our Services
+subtitle : What We Excel At
+service_item :
+  - name : Cybersecurity Assessment
+    icon : ti-shield
+    content : Comprehensive evaluation of your security posture with actionable recommendations to strengthen your defenses.
+
+  - name : Penetration Testing
+    icon : ti-target
+    content : Advanced penetration testing services to identify vulnerabilities before malicious actors do.
+
+  - name : Security Architecture
+    icon : ti-layout
+    content : Design and implementation of robust security architectures tailored to your organization's needs.
+
+  - name : Incident Response
+    icon : ti-alert
+    content : 24/7 incident response and recovery services to minimize the impact of security breaches.
+
+  - name : Cloud Security
+    icon : ti-cloud
+    content : Secure your cloud infrastructure with our specialized cloud security solutions and best practices.
+
+  - name : Security Training
+    icon : ti-user
+    content : Empower your team with comprehensive security awareness training and certification programs. 

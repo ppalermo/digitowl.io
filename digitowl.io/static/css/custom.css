@@ -665,4 +665,88 @@ html {
 
 .scroll-to-top:hover i {
     transform: translateY(-2px);
+}
+
+/* Services Section Styles */
+#services {
+    position: relative;
+    background: rgba(10, 10, 10, 0.98);
+}
+
+.service-item {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.service-icon i {
+    background: linear-gradient(45deg, #57cbcc, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover .service-icon i {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.service-content {
+    position: relative;
+    z-index: 1;
+}
+
+.service-content h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.service-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.service-bg-shape {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(87, 203, 204, 0.05) 0%, rgba(46, 204, 113, 0) 70%);
+    transform: rotate(-15deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.service-item:hover .service-bg-shape {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-top: 1rem;
 } 
