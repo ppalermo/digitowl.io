@@ -1,9 +1,9 @@
 ############################### Banner ################################
 banner:
   enable : true
-  bg_image_webp : "images/backgrounds/corebackground.jpg"
-  bg_image : "images/backgrounds/corebackground.jpg"
-  icon : "" # themify icon pack : https://themify.me/themify-icons
+  bg_image_webp : "images/backgrounds/hero-bg.webp"
+  bg_image : "images/backgrounds/hero-bg.jpg"
+  icon : "ti-shield" # themify icon pack : https://themify.me/themify-icons
   title : "Empower Your Future"
   content : "United in Defense: Amplifying Cybersecurity for All"
   button:
