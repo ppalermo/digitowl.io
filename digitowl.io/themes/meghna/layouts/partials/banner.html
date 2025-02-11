@@ -9,8 +9,8 @@
 
 	<div class="block">
 		{{ if .logo_image }}
-		<div class="hero-logo wow fadeIn" data-wow-delay=".2s">
-			<img src="{{ .logo_image | absURL }}" alt="{{ site.Title }}" />
+		<div class="main-logo-container wow fadeIn" data-wow-delay=".2s">
+			<img class="main-hero-logo" src="{{ .logo_image | absURL }}" alt="{{ site.Title }}" />
 		</div>
 		{{ end }}
 		<h1 class="wow fadeInUp" data-wow-delay=".3s">{{ .title | markdownify }}</h1>
