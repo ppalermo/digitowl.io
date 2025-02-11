@@ -878,19 +878,24 @@ footer .copyright {
 
 /* Hero Logo Styling */
 .hero-logo {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
+    position: relative;
 }
 
 .hero-logo img {
-    max-height: 80px;
+    max-height: 100px;  /* Slightly larger than nav/footer (80px) but not huge */
     width: auto;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-    transition: transform 0.3s ease;
+    opacity: 0.9;      /* Slightly transparent to blend */
+    filter: drop-shadow(0 4px 12px rgba(87, 203, 204, 0.2)) brightness(0.95);  /* Subtle glow effect */
+    transition: all 0.4s ease;
+    backdrop-filter: blur(3px);
 }
 
 .hero-logo img:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
+    opacity: 1;
+    filter: drop-shadow(0 6px 15px rgba(87, 203, 204, 0.3)) brightness(1);
 }
 
 /* Blog Post - Workflow Diagram */
