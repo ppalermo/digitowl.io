@@ -3,7 +3,7 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -11,13 +11,13 @@
 /* Center images in blog posts and make them responsive */
 .post-content img {
   display: block;
-  margin: 2rem auto;
+  margin: 2rem 0;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   background: rgba(255, 255, 255, 0.03);
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .post-content figure {
@@ -919,12 +919,12 @@ footer .copyright {
 
 /* Blog Post - Download Section */
 .download-section {
-    text-align: center;
-    margin: 3rem auto;
+    text-align: left;
+    margin: 3rem 0;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    max-width: 600px;
+    max-width: 100%;
 }
 
 .download-btn {
