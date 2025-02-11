@@ -878,23 +878,23 @@ footer .copyright {
 
 /* Hero Logo Styling */
 .hero-logo {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     text-align: center;
     position: relative;
 }
 
 .hero-logo img {
-    max-height: 50px;  /* Reduced from 100px to 50px - much smaller */
+    max-height: 35px;  /* Drastically reduced from 50px to 35px */
     width: auto;
-    opacity: 0.85;    /* Slightly more transparent to blend better */
-    filter: drop-shadow(0 3px 8px rgba(87, 203, 204, 0.15)) brightness(0.95);  /* Subtler glow */
-    transition: all 0.4s ease;
+    opacity: 0.85;
+    filter: drop-shadow(0 2px 6px rgba(87, 203, 204, 0.12)) brightness(0.95);
+    transition: all 0.3s ease;
 }
 
 .hero-logo img:hover {
-    transform: scale(1.05);
-    opacity: 1;
-    filter: drop-shadow(0 4px 12px rgba(87, 203, 204, 0.25)) brightness(1);
+    transform: scale(1.03);
+    opacity: 0.95;
+    filter: drop-shadow(0 3px 8px rgba(87, 203, 204, 0.2)) brightness(1);
 }
 
 /* Blog Post - Workflow Diagram */
