@@ -1,0 +1,278 @@
+{
+  "name": "Working-Ollama-Gmail-SPAM-Filter",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 100,
+        "filters": {}
+      },
+      "id": "6e94a46f-df81-406a-acd7-2c8cef1ee079",
+      "name": "Gmail2",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        360,
+        -320
+      ],
+      "webhookId": "72474a86-36b6-4316-9cf0-b79903eac737",
+      "alwaysOutputData": true,
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "8pbhXUUEsrrUJsOQ",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8258fd3e-46e2-4f5f-b3c0-8496e9e8f25c",
+              "leftValue": "={{ $json.classification }}",
+              "rightValue": "SPAM",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a2de1de9-1d67-4850-9c36-d1791d95ff01",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1520,
+        -320
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();  // This is the array returned by the AI Agent\nreturn items.map(item => {\n  const rawOutput = item.json.output || '{}';\n\n  let parsed;\n  try {\n    parsed = JSON.parse(rawOutput);\n  } catch (error) {\n    // If we fail to parse, fallback\n    parsed = { classification: 'ERROR', emailId: '', subject: '', snippet: '', sender: '' };\n    console.log('Error parsing output:', error);\n  }\n\n  return {\n    json: {\n      classification: parsed.classification || 'ERROR',\n      emailId:        parsed.emailId        || '',\n      subject:        parsed.subject        || '',\n      snippet:        parsed.snippet        || '',\n      sender:         parsed.sender         || '',\n      // Keep a raw copy for debugging if needed\n      raw_response:   item.json.output\n    }\n  };\n});\n"
+      },
+      "id": "4a24a361-6770-4153-8241-eafed0ec8464",
+      "name": "Code2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1280,
+        -320
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "505ea720-f8f3-40ab-9a5f-6db7d2395d85",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nreturn items.map(item => ({\n  json: {\n    messages: [\n      {\n        role: \"system\",\n        content: `You are a binary email classifier.\nReturn ONLY valid JSON with keys:\n{\n  \"classification\": \"SPAM or IMPORTANT\",\n  \"emailId\": \"...\",\n  \"subject\": \"...\",\n  \"snippet\": \"...\",\n  \"sender\": \"...\"\n}`\n      },\n      {\n        role: \"user\",\n        content: `Sender: ${item.json.From}\nSubject: ${item.json.Subject}\nSnippet: ${item.json.snippet}\nEmail ID: ${item.json.id}`\n      }\n    ]\n  }\n}));"
+      },
+      "id": "c9b5dfbf-3ae8-4ece-8065-c291891c8a90",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "model": "mistral:7b-instruct",
+        "options": {}
+      },
+      "id": "69bc900b-0145-4b23-a9ac-32d11bd6a19f",
+      "name": "Ollama Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        700,
+        -60
+      ],
+      "credentials": {
+        "ollamaApi": {
+          "id": "6uAIoKfjKjQQTopX",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "if (!Array.isArray(items)) {\n  return [];\n}\n\nconst spamItems = items.filter(item => \n  item?.json?.classification === \"SPAM\"\n);\n\nreturn spamItems;"
+      },
+      "id": "9759df8d-ed16-4658-9af8-1816b3b3d313",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1840,
+        -340
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{$json.messages[0].content + \"\\\\nEmail to classify:\\\\n\" + $json.messages[1].content }}",
+        "options": {}
+      },
+      "id": "69a06811-0b59-4e2f-a853-819123338a6f",
+      "name": "AI Agent1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        840,
+        -320
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "messageId": "={{ $json.emailId }}"
+      },
+      "id": "32d2b571-329b-4b63-b08e-bce651f1f1f2",
+      "name": "Gmail3",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2120,
+        -340
+      ],
+      "webhookId": "360b0972-1aef-4509-9eb6-8e3b6208ce4e",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 2,
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "8pbhXUUEsrrUJsOQ",
+          "name": "Gmail account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Gmail2": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Gmail2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Gmail3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e5c309c5-4db8-4f8b-81d6-5f63f30309d6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "24462904939129aa96f1c9e7c5fb2db32ea28032ac54c826f544df951f3262e4"
+  },
+  "id": "g7YE3rNXoGTjVftO",
+  "tags": []
+}
