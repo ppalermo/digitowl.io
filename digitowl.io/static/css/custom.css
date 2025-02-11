@@ -1024,4 +1024,36 @@ img[src*="/images/logo.png"] {
 .hero-area .block *[class*="logo"] {
     width: auto !important;
     max-width: 180px !important;
+}
+
+/* Direct targeting of hero logo */
+[src*="logo-hero.png"] {
+    width: 180px !important;
+    height: 180px !important;
+    max-width: 180px !important;
+    max-height: 180px !important;
+}
+
+/* Ensure no other styles override this */
+.hero-area [src*="logo-hero.png"],
+.block [src*="logo-hero.png"],
+section [src*="logo-hero.png"],
+img[src*="logo-hero.png"] {
+    width: 180px !important;
+    height: 180px !important;
+    max-width: 180px !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* Remove any conflicting styles */
+.hero-area .block *[class*="logo"],
+.hero-area .block img,
+.main-logo-container,
+.main-hero-logo {
+    all: unset !important;
+    display: block !important;
+    margin: 0 auto !important;
 } 
