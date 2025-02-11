@@ -114,7 +114,7 @@ weight = 5
 
 ############################# Default Parameters ##########################
 [params]
-logo = "images/logo3.webp"
+logo = "images/logo.png"
 # Meta data
 description = "DigitOwl - Cybersecurity Consulting Services"
 author = "DigitOwl"
@@ -126,7 +126,7 @@ post_share = true
 # preloader
 [params.preloader]
 enable = false
-preloader = "images/logo3.webp"
+preloader = "images/logo.png"
 
 # cookies
 [params.cookies]

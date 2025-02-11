@@ -28,7 +28,11 @@ The workflow consists of interconnected nodes, each handling a specific task:
 4. Decision nodes trigger actions
 
 Here's the complete workflow configuration:
+
+<figure>
 ![n8n Workflow Diagram](/images/ollama_gmail_workflow.png)
+<figcaption>Complete n8n workflow configuration</figcaption>
+</figure>
 
 You can download the complete n8n workflow configuration here:
 [Download Workflow JSON](/downloads/ollama_gmail_workflow.json) {.btn .btn-primary}
