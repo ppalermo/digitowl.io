@@ -1002,4 +1002,26 @@ footer .copyright {
     height: auto !important;
     max-width: 180px !important;
     max-height: none !important;
+}
+
+/* Override for main banner logo */
+.hero-area .block img,
+.hero-area .block img[src*="logo"],
+.hero-area .block img[src*="logo.png"],
+section.hero-area img[src*="logo"],
+.block img[src*="logo"],
+img[src*="/images/logo.png"] {
+    width: 180px !important;
+    height: auto !important;
+    max-width: 180px !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* Reset any potential conflicting styles */
+.hero-area .block *[class*="logo"] {
+    width: auto !important;
+    max-width: 180px !important;
 } 
