@@ -29,14 +29,11 @@ The workflow consists of interconnected nodes, each handling a specific task:
 
 Here's the complete workflow configuration:
 
-<figure class="workflow-diagram">
-  <img src="/images/ollama_gmail_workflow.png" alt="n8n Workflow Diagram" />
-  <figcaption>Complete n8n workflow configuration</figcaption>
-</figure>
+![n8n Workflow Diagram](/images/ollama_gmail_workflow.png)
 
 <div class="download-section">
-  <a href="/downloads/ollama_gmail_workflow.json" class="btn btn-primary">
-    <i class="ti-download"></i> Download Workflow JSON
+  <a href="/downloads/ollama_gmail_workflow.json" class="btn btn-primary download-btn">
+    <i class="ti-download"></i> Download Workflow Configuration
   </a>
 </div>
 
