@@ -964,44 +964,58 @@ footer .copyright {
 /* Main Hero Logo Styling */
 .main-logo-container {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .main-hero-logo {
-    width: 180px !important; /* Reduced size - adjust this value as needed */
+    width: 120px !important; /* Reduced size from 180px to 120px */
     height: auto;
     margin: 0 auto;
     display: block;
-    filter: drop-shadow(0 4px 8px rgba(87, 203, 204, 0.2));
+    filter: drop-shadow(0 2px 4px rgba(87, 203, 204, 0.3));
     transition: all 0.3s ease;
+    border-radius: 50%; /* Add rounded edges */
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    padding: 10px; /* Add some padding around the logo */
 }
 
 .main-hero-logo:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 6px 12px rgba(87, 203, 204, 0.3));
 }
 
 .block img[src*="logo.png"] {
-    width: 180px !important;
+    width: 120px !important;
     height: auto !important;
     margin: 0 auto;
     display: block;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    filter: drop-shadow(0 2px 4px rgba(87, 203, 204, 0.3));
 }
 
 .hero-area .block img[src$="logo.png"] {
-    width: 180px !important;
+    width: 120px !important;
     height: auto !important;
-    max-width: 180px !important;
+    max-width: 120px !important;
     max-height: none !important;
     margin: 0 auto;
     display: block;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    filter: drop-shadow(0 2px 4px rgba(87, 203, 204, 0.3));
 }
 
 .hero-area .block > img[src$="logo.png"] {
-    width: 180px !important;
+    width: 120px !important;
     height: auto !important;
-    max-width: 180px !important;
+    max-width: 120px !important;
     max-height: none !important;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    filter: drop-shadow(0 2px 4px rgba(87, 203, 204, 0.3));
 }
 
 /* Override for main banner logo */
@@ -1011,27 +1025,37 @@ footer .copyright {
 section.hero-area img[src*="logo"],
 .block img[src*="logo"],
 img[src*="/images/logo.png"] {
-    width: 180px !important;
+    width: 120px !important;
     height: auto !important;
-    max-width: 180px !important;
-    max-height: 180px !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
     object-fit: contain !important;
-    margin: 0 auto !important;
-    display: block !important;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    filter: drop-shadow(0 2px 4px rgba(87, 203, 204, 0.3));
 }
 
 /* Reset any potential conflicting styles */
 .hero-area .block *[class*="logo"] {
     width: auto !important;
-    max-width: 180px !important;
+    max-width: 120px !important;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    filter: drop-shadow(0 2px 4px rgba(87, 203, 204, 0.3));
 }
 
 /* Direct targeting of hero logo */
 [src*="logo-hero.png"] {
-    width: 180px !important;
-    height: 180px !important;
-    max-width: 180px !important;
-    max-height: 180px !important;
+    width: 120px !important;
+    height: auto !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    filter: drop-shadow(0 2px 4px rgba(87, 203, 204, 0.3));
 }
 
 /* Ensure no other styles override this */
@@ -1039,13 +1063,14 @@ img[src*="/images/logo.png"] {
 .block [src*="logo-hero.png"],
 section [src*="logo-hero.png"],
 img[src*="logo-hero.png"] {
-    width: 180px !important;
-    height: 180px !important;
-    max-width: 180px !important;
-    max-height: 180px !important;
-    object-fit: contain !important;
-    margin: 0 auto !important;
-    display: block !important;
+    width: 120px !important;
+    height: auto !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    filter: drop-shadow(0 2px 4px rgba(87, 203, 204, 0.3));
 }
 
 /* Remove any conflicting styles */
@@ -1053,7 +1078,7 @@ img[src*="logo-hero.png"] {
 .hero-area .block img,
 .main-logo-container,
 .main-hero-logo {
-    all: unset !important;
     display: block !important;
     margin: 0 auto !important;
+    max-width: 120px !important; /* Ensure consistent max-width */
 } 

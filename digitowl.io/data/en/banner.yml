@@ -3,7 +3,7 @@ banner:
   enable : true
   bg_image_webp : "images/backgrounds/hero-bg.webp"
   bg_image : "images/backgrounds/hero-bg.jpg"
-  logo_image : "images/logo-hero.png"
+  logo_image : "images/logo.png"
   title : "Empower Your Future"
   content : "United in Defense: Amplifying Cybersecurity for All"
   button:
