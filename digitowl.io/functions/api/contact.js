@@ -21,11 +21,6 @@ export async function onRequestPost(context) {
       });
     }
 
-    // Log config for debugging (remove after fixing)
-    const mailgunDomainDebug = env.MAILGUN_DOMAIN || 'mail.digitowl.io';
-    const apiKeyPrefix = env.MAILGUN_API_KEY ? env.MAILGUN_API_KEY.substring(0, 8) : 'NOT_SET';
-    console.log(`Mailgun config: domain=${mailgunDomainDebug}, apiKeyPrefix=${apiKeyPrefix}`);
-
     const formData = await request.formData();
 
     const name = formData.get('name');
