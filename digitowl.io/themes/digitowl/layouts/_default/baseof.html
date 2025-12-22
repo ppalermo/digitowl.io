@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{ "plugins/themify-icons/themify-icons.css" | relURL }}">
 
   <!-- CSS -->
-  {{ $css := resources.Get "css/main.css" | css.PostCSS }}
+  {{ $css := resources.Get "css/main.css" | resources.PostCSS }}
   {{ if hugo.IsProduction }}
     {{ $css = $css | minify | fingerprint }}
   {{ end }}
