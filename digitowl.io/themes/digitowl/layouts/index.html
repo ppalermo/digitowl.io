@@ -1,0 +1,187 @@
+{{ define "title" }}{{ .Site.Title }} - Cybersecurity & AI Security Consulting{{ end }}
+
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-primary-dark"></div>
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-4xl">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8 animate-fade-in">
+        <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+        <span class="text-white/80 text-sm font-medium">Trusted by Security-First Organizations</span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
+        {{ with .Site.Data.en.banner.banner }}
+          {{ .title }}
+        {{ else }}
+          Secure Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary-light">Digital Future</span>
+        {{ end }}
+      </h1>
+
+      <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl leading-relaxed animate-slide-up" style="animation-delay: 0.1s">
+        {{ with .Site.Data.en.banner.banner }}
+          {{ .content }}
+        {{ else }}
+          Expert cybersecurity consulting and AI security solutions to protect your organization from evolving threats.
+        {{ end }}
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay: 0.2s">
+        <a href="#contact" class="btn-primary text-lg px-8 py-4">
+          Schedule a Consultation
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="#services" class="btn-secondary text-lg px-8 py-4 border-white/30 text-white hover:bg-white hover:text-slate-900">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">What We Do</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+        {{ with .Site.Data.en.service }}{{ .title }}{{ else }}Our Services{{ end }}
+      </h2>
+      <p class="text-lg text-slate-600">
+        Comprehensive security solutions tailored to protect your organization in an ever-evolving threat landscape.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {{ range .Site.Data.en.service.service_item }}
+      <div class="card group hover:border-primary border-2 border-transparent">
+        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+          <i class="{{ .icon }} text-2xl text-primary group-hover:text-white transition-colors"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">{{ .name }}</h3>
+        <p class="text-slate-600 leading-relaxed">{{ .content }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">About Us</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
+          {{ with .Site.Data.en.about.about }}{{ .title }}{{ else }}Why Choose DigitOwl{{ end }}
+        </h2>
+
+        <div class="space-y-8">
+          {{ range .Site.Data.en.about.about.about_item }}
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center">
+              <i class="{{ .icon }} text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">{{ .title }}</h3>
+              <p class="text-slate-600 leading-relaxed">{{ .content }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl flex items-center justify-center">
+          <img src="{{ "images/logo.png" | relURL }}" alt="DigitOwl" class="w-1/2 h-auto">
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-2xl -z-10"></div>
+        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/20 rounded-2xl -z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-24 bg-gradient-to-br from-primary to-primary-dark">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+      Ready to Secure Your Organization?
+    </h2>
+    <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+      Let's discuss how we can help protect your digital assets and build a robust security strategy.
+    </p>
+    <a href="#contact" class="inline-flex items-center gap-2 bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-slate-100 transition-colors">
+      Schedule a Free Consultation
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Contact Us</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          Let's Start a Conversation
+        </h2>
+        <p class="text-lg text-slate-600">
+          Have questions about our services? We'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Name</label>
+              <input type="text" id="name" name="name" required
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+              <input type="email" id="email" name="email" required
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+            </div>
+          </div>
+          <div>
+            <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+            <input type="text" id="subject" name="subject" required
+              class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+            <textarea id="message" name="message" rows="5" required
+              class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full text-lg py-4">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

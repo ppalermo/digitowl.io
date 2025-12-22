@@ -25,4 +25,12 @@ service_item :
 
   - name : Security Training
     icon : ti-user
-    content : Empower your team with comprehensive security awareness training and certification programs. 
+    content : Empower your team with comprehensive security awareness training and certification programs.
+
+  - name : AI Security Consulting
+    icon : ti-light-bulb
+    content : Navigate the complex landscape of AI security with expert guidance on securing LLMs, preventing prompt injection, and protecting AI pipelines.
+
+  - name : AI Security Education
+    icon : ti-book
+    content : Cutting-edge training programs on AI/ML security risks, red teaming AI systems, and building secure AI applications for your development teams. 

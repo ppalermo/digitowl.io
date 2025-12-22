@@ -1,0 +1,11 @@
+name = "DigitOwl Modern"
+license = "MIT"
+description = "Custom modern theme for DigitOwl - Built with Tailwind CSS"
+homepage = "https://digitowl.io"
+tags = ['tailwind', 'modern', 'cybersecurity', 'saas', 'business']
+features = ['tailwindcss', 'responsive', 'dark-mode-ready']
+min_version = "0.121.0"
+
+[author]
+  name = "DigitOwl"
+  homepage = "https://digitowl.io"
