@@ -2,16 +2,16 @@
 
 /* Custom theme configuration */
 @theme {
-  /* Colors - Modern security/tech palette inspired by inreply.in */
-  --color-primary: #0a66c2;
-  --color-primary-dark: #004182;
-  --color-primary-light: #378fe9;
+  /* Colors - Bold black/white palette matching DigitOwl logo */
+  --color-primary: #171717;
+  --color-primary-dark: #0a0a0a;
+  --color-primary-light: #404040;
 
-  --color-secondary: #001e3c;
-  --color-secondary-light: #0a2540;
+  --color-secondary: #0a0a0a;
+  --color-secondary-light: #171717;
 
-  --color-accent: #00d4aa;
-  --color-accent-dark: #00a884;
+  --color-accent: #22c55e;
+  --color-accent-dark: #16a34a;
 
   --color-surface: #ffffff;
   --color-surface-dark: #0f172a;

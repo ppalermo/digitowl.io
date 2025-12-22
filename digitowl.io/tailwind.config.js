@@ -14,17 +14,17 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#0a66c2',
-          dark: '#004182',
-          light: '#378fe9',
+          DEFAULT: '#171717',
+          dark: '#0a0a0a',
+          light: '#404040',
         },
         secondary: {
-          DEFAULT: '#001e3c',
-          light: '#0a2540',
+          DEFAULT: '#0a0a0a',
+          light: '#171717',
         },
         accent: {
-          DEFAULT: '#00d4aa',
-          dark: '#00a884',
+          DEFAULT: '#22c55e',
+          dark: '#16a34a',
         },
       },
     },
