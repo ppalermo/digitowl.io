@@ -12,6 +12,15 @@ export async function onRequestPost(context) {
   };
 
   try {
+    // Check environment variables are set
+    if (!env.MAILGUN_API_KEY) {
+      console.error('MAILGUN_API_KEY not configured');
+      return new Response(null, {
+        status: 302,
+        headers: { 'Location': '/?contact=error&reason=config', ...corsHeaders }
+      });
+    }
+
     const formData = await request.formData();
 
     const name = formData.get('name');
@@ -21,24 +30,18 @@ export async function onRequestPost(context) {
 
     // Validate required fields
     if (!name || !email || !subject || !message) {
-      return new Response(JSON.stringify({
-        success: false,
-        error: 'All fields are required'
-      }), {
-        status: 400,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      return new Response(null, {
+        status: 302,
+        headers: { 'Location': '/?contact=error&reason=validation', ...corsHeaders }
       });
     }
 
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return new Response(JSON.stringify({
-        success: false,
-        error: 'Invalid email address'
-      }), {
-        status: 400,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      return new Response(null, {
+        status: 302,
+        headers: { 'Location': '/?contact=error&reason=email', ...corsHeaders }
       });
     }
 
@@ -47,8 +50,8 @@ export async function onRequestPost(context) {
     const mailgunEndpoint = `https://api.mailgun.net/v3/${mailgunDomain}/messages`;
 
     const emailData = new FormData();
-    emailData.append('from', `DigitOwl Contact Form <contact@${mailgunDomain}>`);
-    emailData.append('to', 'contact@digitowl.io');
+    emailData.append('from', `DigitOwl Contact Form <noreply@${mailgunDomain}>`);
+    emailData.append('to', 'martin@digitowl.io');
     emailData.append('reply-to', email);
     emailData.append('subject', `[Contact Form] ${subject}`);
     emailData.append('text', `
@@ -119,8 +122,12 @@ Sent from DigitOwl.io contact form
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Mailgun error:', errorText);
-      throw new Error('Failed to send email');
+      console.error('Mailgun error:', response.status, errorText);
+      // Include status code in redirect for debugging
+      return new Response(null, {
+        status: 302,
+        headers: { 'Location': `/?contact=error&reason=mailgun&status=${response.status}`, ...corsHeaders }
+      });
     }
 
     // Return success - redirect back to the page with success message
