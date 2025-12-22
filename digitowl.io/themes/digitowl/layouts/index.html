@@ -154,8 +154,32 @@
         </p>
       </div>
 
+      <!-- Success/Error Messages -->
+      <div id="contact-success" class="hidden bg-green-50 border border-green-200 rounded-xl p-6 mb-6">
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div>
+            <h4 class="font-semibold text-green-800">Message Sent!</h4>
+            <p class="text-green-700">Thank you for reaching out. We'll get back to you shortly.</p>
+          </div>
+        </div>
+      </div>
+      <div id="contact-error" class="hidden bg-red-50 border border-red-200 rounded-xl p-6 mb-6">
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div>
+            <h4 class="font-semibold text-red-800">Something went wrong</h4>
+            <p class="text-red-700">Please try again or email us directly at contact@digitowl.io</p>
+          </div>
+        </div>
+      </div>
+
       <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-        <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+        <form action="/api/contact" method="POST" class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Name</label>
@@ -186,5 +210,22 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Handle contact form success/error states from URL
+  document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const contactStatus = params.get('contact');
+
+    if (contactStatus === 'success') {
+      document.getElementById('contact-success').classList.remove('hidden');
+      // Clean up URL
+      window.history.replaceState({}, '', window.location.pathname + '#contact');
+    } else if (contactStatus === 'error') {
+      document.getElementById('contact-error').classList.remove('hidden');
+      window.history.replaceState({}, '', window.location.pathname + '#contact');
+    }
+  });
+</script>
 
 {{ end }}
