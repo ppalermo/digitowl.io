@@ -582,7 +582,12 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.85) 50%,
+        rgba(0, 0, 0, 0.75) 100%
+    );
 }
 
 .hero-area .block {
@@ -594,15 +599,21 @@ html {
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 30px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
 }
 
 .hero-area p {
-    color: #fff;
-    font-size: 20px;
-    line-height: 1.5;
+    color: #f0f0f0;
+    font-size: 22px;
+    line-height: 1.7;
     margin-bottom: 40px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.4);
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .video-button {
@@ -964,121 +975,47 @@ footer .copyright {
 /* Main Hero Logo Styling */
 .main-logo-container {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .main-hero-logo {
-    width: 80px !important; /* Reduced size from 120px to 80px */
+    width: 120px !important;
     height: auto;
     margin: 0 auto;
     display: block;
-    filter: drop-shadow(0 1px 2px rgba(87, 203, 204, 0.2));
+    filter: invert(1) brightness(2) drop-shadow(0 2px 8px rgba(87, 203, 204, 0.4));
     transition: all 0.3s ease;
-    border-radius: 50%; /* Add rounded edges */
-    background-color: rgba(0, 0, 0, 0.1); /* More transparent background */
-    padding: 8px; /* Reduced padding */
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
 }
 
 .main-hero-logo:hover {
     transform: scale(1.05);
+    filter: invert(1) brightness(2.2) drop-shadow(0 4px 12px rgba(87, 203, 204, 0.6));
 }
 
-.block img[src*="logo.png"] {
-    width: 80px !important; /* Reduced size */
-    height: auto !important;
-    margin: 0 auto;
-    display: block;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1); /* More transparent background */
-    padding: 8px; /* Reduced padding */
-    filter: drop-shadow(0 1px 2px rgba(87, 203, 204, 0.2));
-}
-
-.hero-area .block img[src$="logo.png"] {
-    width: 80px !important; /* Reduced size */
-    height: auto !important;
-    max-width: 80px !important;
-    max-height: none !important;
-    margin: 0 auto;
-    display: block;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1); /* More transparent background */
-    padding: 8px; /* Reduced padding */
-    filter: drop-shadow(0 1px 2px rgba(87, 203, 204, 0.2));
-}
-
-.hero-area .block > img[src$="logo.png"] {
-    width: 80px !important; /* Reduced size */
-    height: auto !important;
-    max-width: 80px !important;
-    max-height: none !important;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1); /* More transparent background */
-    padding: 8px; /* Reduced padding */
-    filter: drop-shadow(0 1px 2px rgba(87, 203, 204, 0.2));
-}
-
-/* Override for main banner logo */
-.hero-area .block img,
-.hero-area .block img[src*="logo"],
-.hero-area .block img[src*="logo.png"],
-section.hero-area img[src*="logo"],
-.block img[src*="logo"],
-img[src*="/images/logo.png"] {
-    width: 80px !important; /* Reduced size */
-    height: auto !important;
-    max-width: 80px !important;
-    max-height: 80px !important;
-    object-fit: contain !important;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1); /* More transparent background */
-    padding: 8px; /* Reduced padding */
-    filter: drop-shadow(0 1px 2px rgba(87, 203, 204, 0.2));
-}
-
-/* Reset any potential conflicting styles */
-.hero-area .block *[class*="logo"] {
-    width: auto !important;
-    max-width: 80px !important; /* Reduced size */
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1); /* More transparent background */
-    padding: 8px; /* Reduced padding */
-    filter: drop-shadow(0 1px 2px rgba(87, 203, 204, 0.2));
-}
-
-/* Direct targeting of hero logo */
-[src*="logo-hero.png"] {
-    width: 80px !important; /* Reduced size */
-    height: auto !important;
-    max-width: 80px !important;
-    max-height: 80px !important;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1); /* More transparent background */
-    padding: 8px; /* Reduced padding */
-    filter: drop-shadow(0 1px 2px rgba(87, 203, 204, 0.2));
-}
-
-/* Ensure no other styles override this */
+/* Hero banner logo - inverted for dark background */
+.hero-area .block img[src*="logo-hero"],
 .hero-area [src*="logo-hero.png"],
 .block [src*="logo-hero.png"],
 section [src*="logo-hero.png"],
-img[src*="logo-hero.png"] {
-    width: 80px !important; /* Reduced size */
+img[src*="logo-hero.png"],
+[src*="logo-hero.png"] {
+    width: 120px !important;
     height: auto !important;
-    max-width: 80px !important;
-    max-height: 80px !important;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1); /* More transparent background */
-    padding: 8px; /* Reduced padding */
-    filter: drop-shadow(0 1px 2px rgba(87, 203, 204, 0.2));
+    max-width: 120px !important;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0;
+    background-color: transparent !important;
+    padding: 0;
+    filter: invert(1) brightness(2) drop-shadow(0 2px 8px rgba(87, 203, 204, 0.4)) !important;
 }
 
-/* Remove any conflicting styles */
-.hero-area .block *[class*="logo"],
-.hero-area .block img,
-.main-logo-container,
-.main-hero-logo {
+/* Container styling */
+.hero-area .block .main-logo-container {
     display: block !important;
-    margin: 0 auto !important;
-    max-width: 80px !important; /* Reduced size */
+    margin: 0 auto 1.5rem auto !important;
+    max-width: none !important;
 } 
