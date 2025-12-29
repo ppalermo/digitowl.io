@@ -45,6 +45,9 @@
         </a>
       </div>
     </div>
+
+    <!-- Cyber Dashboard -->
+    {{ partial "cyber_dashboard.html" . }}
   </div>
 
   <!-- Scroll Indicator -->
@@ -227,5 +230,8 @@
     }
   });
 </script>
+
+<!-- Cyber Dashboard Script -->
+<script src="{{ "js/cyber_dashboard.js" | relURL }}"></script>
 
 {{ end }}
