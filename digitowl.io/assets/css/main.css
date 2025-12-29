@@ -442,4 +442,396 @@
   .blog-content em {
     font-style: italic;
   }
+
+  /* Cyber Dashboard Styles */
+  .cyber-dashboard-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .cyber-terminal {
+    background: linear-gradient(135deg, #0a0e27 0%, #16213e 100%);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow:
+      0 0 30px rgba(0, 255, 200, 0.15),
+      0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    position: relative;
+  }
+
+  /* Scanline effect */
+  .cyber-terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Terminal Header */
+  .terminal-header {
+    background: linear-gradient(180deg, #1a1f3a 0%, #151935 100%);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 255, 200, 0.2);
+    position: relative;
+    z-index: 2;
+  }
+
+  .terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .control-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+  }
+
+  .control-red {
+    background-color: #ff5f56;
+    color: #ff5f56;
+  }
+
+  .control-yellow {
+    background-color: #ffbd2e;
+    color: #ffbd2e;
+  }
+
+  .control-green {
+    background-color: #27c93f;
+    color: #27c93f;
+  }
+
+  .terminal-title {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #00ffc8;
+    text-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
+    letter-spacing: 0.1em;
+    flex: 1;
+    text-align: center;
+  }
+
+  .terminal-flash {
+    animation: flash 2s infinite;
+  }
+
+  @keyframes flash {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.3; }
+  }
+
+  .terminal-separator {
+    color: #00d4ff;
+    margin: 0 0.5rem;
+  }
+
+  .terminal-status {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    color: #00ffc8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .status-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #00ffc8;
+    border-radius: 50%;
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(0, 255, 200, 0.8);
+      opacity: 1;
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 255, 200, 1);
+      opacity: 0.8;
+    }
+  }
+
+  .status-text {
+    font-weight: 700;
+    color: #00ffc8;
+  }
+
+  /* Terminal Body */
+  .terminal-body {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+  }
+
+  .terminal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .terminal-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .terminal-section {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  .section-header {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.875rem;
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  }
+
+  .terminal-prompt {
+    color: #00ffc8;
+    font-weight: 600;
+  }
+
+  /* Attack Log */
+  .terminal-log {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #00ffc8;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 200, 0.3) rgba(0, 0, 0, 0.2);
+  }
+
+  .terminal-log::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .terminal-log::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .terminal-log::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 200, 0.3);
+    border-radius: 3px;
+  }
+
+  .log-entry {
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-left: 2px solid rgba(0, 255, 200, 0.3);
+    animation: slideInLog 0.3s ease-out;
+  }
+
+  @keyframes slideInLog {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .log-time {
+    color: #00d4ff;
+    font-weight: 600;
+  }
+
+  .log-type {
+    color: #ff6b6b;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+  }
+
+  .log-details {
+    color: #00ffc8;
+  }
+
+  .log-ip {
+    color: #ffd93d;
+  }
+
+  .log-action {
+    color: #6bcf7f;
+    font-weight: 700;
+  }
+
+  /* Threat Counter */
+  .threat-counter-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+  }
+
+  .counter-label {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    color: #ff6b6b;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .threat-counter {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .counter-digit {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff6b6b;
+    text-shadow:
+      0 0 10px rgba(255, 107, 107, 0.8),
+      0 0 20px rgba(255, 107, 107, 0.5);
+    background: rgba(255, 107, 107, 0.1);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    min-width: 60px;
+    display: inline-block;
+  }
+
+  .counter-sublabel {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.625rem;
+    color: #ff6b6b;
+    letter-spacing: 0.15em;
+    opacity: 0.7;
+  }
+
+  /* System Status Bars */
+  .system-status {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .status-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .status-label {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    color: #00d4ff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .status-icon {
+    color: #00ffc8;
+    font-size: 0.625rem;
+  }
+
+  .status-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .status-bar {
+    flex: 1;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 200, 0.3);
+    position: relative;
+  }
+
+  .status-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00d4ff 0%, #00ffc8 100%);
+    box-shadow:
+      0 0 10px rgba(0, 255, 200, 0.6),
+      inset 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: width 0.5s ease;
+    animation: barPulse 3s infinite;
+  }
+
+  @keyframes barPulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+
+  .status-percent {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+    font-size: 0.875rem;
+    color: #00ffc8;
+    font-weight: 700;
+    min-width: 45px;
+    text-align: right;
+  }
+
+  /* Glitch effect for counter */
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  .counter-digit.glitch {
+    animation: glitch 0.3s;
+  }
 }

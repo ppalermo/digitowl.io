@@ -1,0 +1,102 @@
+<!-- Cyber Attack Dashboard -->
+<div class="cyber-dashboard-container">
+  <div class="cyber-terminal">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <span class="control-btn control-red"></span>
+        <span class="control-btn control-yellow"></span>
+        <span class="control-btn control-green"></span>
+      </div>
+      <div class="terminal-title">
+        <span class="terminal-flash">//</span> LIVE THREAT MONITORING <span class="terminal-separator">|</span> GLOBAL SENSORS
+      </div>
+      <div class="terminal-status">
+        <span class="status-indicator"></span>
+        SYSTEM: <span class="status-text">SECURE</span>
+      </div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+      <div class="terminal-grid">
+        <!-- Left Column: Attack Log -->
+        <div class="terminal-section terminal-log-section">
+          <div class="section-header">
+            <span class="terminal-prompt">root@digitowl:~$</span> tail -f /var/log/threats.log
+          </div>
+          <div class="terminal-log" id="threatLog">
+            <!-- JavaScript will populate this -->
+          </div>
+        </div>
+
+        <!-- Right Column: Stats & Metrics -->
+        <div class="terminal-section terminal-stats-section">
+          <!-- Threat Counter -->
+          <div class="threat-counter-container">
+            <div class="counter-label">TOTAL THREATS NEUTRALIZED</div>
+            <div class="threat-counter" id="threatCounter">
+              <span class="counter-digit">0</span>
+              <span class="counter-digit">0</span>
+              <span class="counter-digit">0</span>
+              <span class="counter-digit">0</span>
+              <span class="counter-digit">0</span>
+            </div>
+            <div class="counter-sublabel">AND COUNTING...</div>
+          </div>
+
+          <!-- System Status Bars -->
+          <div class="system-status">
+            <div class="status-item">
+              <div class="status-label">
+                <span class="status-icon">▶</span> AI FIREWALL STATUS
+              </div>
+              <div class="status-bar-container">
+                <div class="status-bar" id="firewall-bar">
+                  <div class="status-fill" style="width: 98%"></div>
+                </div>
+                <span class="status-percent" id="firewall-percent">98%</span>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <div class="status-label">
+                <span class="status-icon">▶</span> REAL-TIME ANALYSIS
+              </div>
+              <div class="status-bar-container">
+                <div class="status-bar" id="analysis-bar">
+                  <div class="status-fill" style="width: 100%"></div>
+                </div>
+                <span class="status-percent" id="analysis-percent">100%</span>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <div class="status-label">
+                <span class="status-icon">▶</span> ZERO-DAY PREVENTION
+              </div>
+              <div class="status-bar-container">
+                <div class="status-bar" id="zeroday-bar">
+                  <div class="status-fill" style="width: 94%"></div>
+                </div>
+                <span class="status-percent" id="zeroday-percent">94%</span>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <div class="status-label">
+                <span class="status-icon">▶</span> NEURAL CORE V3
+              </div>
+              <div class="status-bar-container">
+                <div class="status-bar" id="neural-bar">
+                  <div class="status-fill" style="width: 96%"></div>
+                </div>
+                <span class="status-percent" id="neural-percent">96%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
