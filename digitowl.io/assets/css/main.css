@@ -217,3 +217,229 @@
     }
   }
 }
+
+/* Blog Post Styles */
+@layer components {
+  /* Blog post container - constrain width for readability */
+  .blog-post {
+    max-width: 800px;
+  }
+
+  /* Blog title - large and bold */
+  .blog-title {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+  }
+
+  /* Blog metadata - cohesive byline */
+  .blog-meta {
+    font-family: var(--font-sans);
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1.5rem;
+  }
+
+  .blog-meta svg {
+    opacity: 0.7;
+  }
+
+  /* Category badges - sleek pills */
+  .category-badge {
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .category-badge:hover {
+    background-color: #ccfbf1;
+    border-color: #5eead4;
+    transform: translateY(-1px);
+  }
+
+  /* Tag pills */
+  .tag-pill {
+    font-weight: 600;
+  }
+
+  /* Blog content - professional typography */
+  .blog-content {
+    font-family: var(--font-sans);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75; /* ~1.6-1.75 for better readability */
+    color: #1e293b;
+  }
+
+  /* Headings - more spacing and bold */
+  .blog-content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+
+  .blog-content h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+
+  .blog-content h4 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  /* Paragraphs */
+  .blog-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Links - teal accent color */
+  .blog-content a {
+    color: #0d9488;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .blog-content a:hover {
+    color: #0f766e;
+    border-bottom-color: #0f766e;
+  }
+
+  /* Lists */
+  .blog-content ul,
+  .blog-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Tables - professional styling */
+  .blog-content table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  }
+
+  .blog-content thead {
+    background: linear-gradient(to bottom, #0f172a, #1e293b);
+    color: white;
+  }
+
+  .blog-content th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #0d9488;
+  }
+
+  .blog-content td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .blog-content tbody tr {
+    transition: background-color 0.15s ease;
+  }
+
+  .blog-content tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+
+  .blog-content tbody tr:hover {
+    background-color: #f1f5f9;
+  }
+
+  .blog-content tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Blockquotes - left colored bar */
+  .blog-content blockquote {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    background-color: #f0fdfa;
+    border-left: 4px solid #0d9488;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-style: italic;
+    color: #0f172a;
+  }
+
+  .blog-content blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Code blocks - distinct styling */
+  .blog-content pre {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #1e293b;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .blog-content code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  .blog-content pre code {
+    color: #e2e8f0;
+    background: none;
+    padding: 0;
+  }
+
+  /* Inline code */
+  .blog-content :not(pre) > code {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+  }
+
+  /* Horizontal rules */
+  .blog-content hr {
+    margin: 3rem 0;
+    border: none;
+    border-top: 2px solid #e2e8f0;
+  }
+
+  /* Images */
+  .blog-content img {
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    margin: 2rem 0;
+  }
+
+  /* Strong/Bold text */
+  .blog-content strong {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  /* Emphasis/Italic text */
+  .blog-content em {
+    font-style: italic;
+  }
+}

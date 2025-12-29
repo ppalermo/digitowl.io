@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="pt-32 pb-24">
   <div class="container mx-auto px-6">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto blog-post">
       <!-- Header -->
       <header class="mb-12">
         <div class="flex items-center gap-4 text-sm text-slate-500 mb-6">
@@ -10,13 +10,13 @@
           </a>
         </div>
 
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+        <h1 class="blog-title text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-tight">
           {{ .Title }}
         </h1>
 
-        <div class="flex flex-wrap items-center gap-6 text-slate-500">
+        <div class="blog-meta flex flex-wrap items-center gap-4 text-sm text-slate-600 mb-6">
           <time datetime="{{ .Date.Format "2006-01-02" }}" class="flex items-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
             </svg>
             {{ .Date.Format "January 2, 2006" }}
@@ -24,7 +24,7 @@
 
           {{ with .Params.author }}
           <span class="flex items-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
             </svg>
             {{ . }}
@@ -32,7 +32,7 @@
           {{ end }}
 
           <span class="flex items-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
             {{ .ReadingTime }} min read
@@ -40,9 +40,9 @@
         </div>
 
         {{ with .Params.categories }}
-        <div class="flex flex-wrap gap-2 mt-6">
+        <div class="blog-categories flex flex-wrap gap-2 mt-4">
           {{ range . }}
-          <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
+          <span class="category-badge bg-teal-50 text-teal-700 border border-teal-200 px-4 py-1.5 rounded-full text-sm font-medium">
             {{ . }}
           </span>
           {{ end }}
@@ -58,7 +58,7 @@
       {{ end }}
 
       <!-- Content -->
-      <div class="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none">
+      <div class="blog-content prose prose-lg prose-slate max-w-none">
         {{ .Content }}
       </div>
 
@@ -68,7 +68,7 @@
         <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Tags</h4>
         <div class="flex flex-wrap gap-2">
           {{ range . }}
-          <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm transition-colors">
+          <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag-pill bg-slate-50 hover:bg-teal-50 text-slate-700 hover:text-teal-700 border border-slate-200 hover:border-teal-300 px-4 py-2 rounded-full text-sm font-medium transition-all">
             #{{ . }}
           </a>
           {{ end }}

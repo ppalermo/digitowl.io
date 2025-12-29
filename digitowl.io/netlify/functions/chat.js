@@ -1,10 +1,8 @@
-const { Configuration, OpenAIApi } = require('openai');
+const OpenAI = require('openai');
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-const openai = new OpenAIApi(configuration);
 
 // Predefined context about your solutions and capabilities
 const SYSTEM_PROMPT = `You are an AI assistant for a cybersecurity consulting firm. Your role is to:
@@ -25,7 +23,7 @@ exports.handler = async function(event, context) {
   try {
     const { message } = JSON.parse(event.body);
 
-    const completion = await openai.createChatCompletion({
+    const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
@@ -38,7 +36,7 @@ exports.handler = async function(event, context) {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        response: completion.data.choices[0].message.content
+        response: completion.choices[0].message.content
       })
     };
   } catch (error) {
@@ -48,4 +46,4 @@ exports.handler = async function(event, context) {
       body: JSON.stringify({ error: 'Failed to process request' })
     };
   }
-}; 
+};
