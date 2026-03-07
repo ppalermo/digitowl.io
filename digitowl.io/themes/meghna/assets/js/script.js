@@ -143,4 +143,64 @@ jQuery(function ($) {
 		counter();
 	});
 
+	/* ========================================================================= */
+	/*	AI Consulting Section Parallax Effect
+	/* ========================================================================= */
+	function aiParallax() {
+		var scrolled = $(window).scrollTop();
+		var aiSection = $('[data-parallax="scroll"]');
+
+		if (aiSection.length) {
+			var offset = aiSection.offset().top;
+			var height = aiSection.outerHeight();
+
+			if (scrolled > offset - $(window).height() && scrolled < offset + height) {
+				var yPos = -(scrolled - offset) / 8;
+				aiSection.css('background-position', 'center ' + yPos + 'px');
+			}
+		}
+	}
+
+	$(window).on('scroll', function () {
+		aiParallax();
+	});
+
+	/* ========================================================================= */
+	/*	AI Stats Counter Animation
+	/* ========================================================================= */
+	function aiStatsCounter() {
+		var oTop;
+		if ($('.stats-number').length !== 0) {
+			oTop = $('.stats-number').offset().top - window.innerHeight;
+		}
+		if ($(window).scrollTop() > oTop) {
+			$('.stats-number').each(function () {
+				var $this = $(this),
+					countTo = $this.attr('data-count');
+
+				if (!$this.hasClass('counted')) {
+					$this.addClass('counted');
+					$({
+						countNum: 0
+					}).animate({
+						countNum: countTo
+					}, {
+						duration: 2000,
+						easing: 'swing',
+						step: function () {
+							$this.text(Math.floor(this.countNum) + '%');
+						},
+						complete: function () {
+							$this.text(this.countNum + '%');
+						}
+					});
+				}
+			});
+		}
+	}
+
+	$(window).on('scroll', function () {
+		aiStatsCounter();
+	});
+
 });

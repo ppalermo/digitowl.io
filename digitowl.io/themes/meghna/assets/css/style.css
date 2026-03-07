@@ -2337,3 +2337,42 @@ figcaption {
 .cookie-box-hide {
   display: none;
 }
+
+/* CyberAgent Chat Button */
+.cyber-chat-btn {
+  background: linear-gradient(135deg, #57cbcc 0%, #2c9091 100%);
+  border: 2px solid transparent;
+  color: #fff !important;
+  padding: 8px 20px;
+  margin-left: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(87, 203, 204, 0.3);
+}
+
+.cyber-chat-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(87, 203, 204, 0.5);
+  background: linear-gradient(135deg, #2c9091 0%, #57cbcc 100%);
+  color: #fff !important;
+}
+
+.cyber-chat-btn i {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.cyber-chat-btn i:last-of-type {
+  margin-left: 3px;
+  margin-right: 0;
+}
+
+@media (max-width: 991px) {
+  .cyber-chat-btn {
+    margin-left: 0;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+  }
+}

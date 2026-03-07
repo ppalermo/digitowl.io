@@ -1,0 +1,73 @@
+enable: true
+
+hero:
+  eyebrow: "Trusted by Fortune 100 Financial Institutions"
+  headline:
+    line1: "Augmenting Human"
+    line2: "Potential through Precise"
+    line3: "Digital Intelligence"
+  subtitle: "We don't just implement AI—we architect digital intelligence that delivers measurable value. Every token optimized. Every process revolutionized. Every dollar justified."
+  cta:
+    primary:
+      text: "Schedule Consultation"
+      link: "#contact"
+    secondary:
+      text: "View Case Studies"
+      link: "#expertise"
+
+stats:
+  - icon: "ti-bolt"
+    value: "98%"
+    label: "Token Efficiency"
+  - icon: "ti-target"
+    value: "10x"
+    label: "ROI Average"
+  - icon: "ti-stats-up"
+    value: "$2B+"
+    label: "Assets Under AI"
+
+industries:
+  section_title: "Elite Industry Expertise"
+  section_subtitle: "Serving the world's most complex institutions with precision-engineered digital intelligence solutions"
+  items:
+    - icon: "ti-stats-up"
+      title: "Financial & Trading"
+      description: "High-frequency environments and global banking infrastructure"
+      capabilities:
+        - "Real-time market intelligence & predictive analytics"
+        - "Algorithmic trading optimization"
+        - "Risk modeling & portfolio management"
+        - "Regulatory compliance automation"
+      stat: "Serving 8 of the top 10 global banks"
+      color: "from-blue-500 to-cyan-500"
+    - icon: "ti-heart"
+      title: "Health Care & Medical"
+      description: "Precision AI with security-first integration"
+      capabilities:
+        - "Clinical decision support systems"
+        - "Medical imaging & diagnostics AI"
+        - "Patient data analysis & predictions"
+        - "HIPAA-compliant AI infrastructure"
+      stat: "Processing 10M+ patient interactions monthly"
+      color: "from-emerald-500 to-teal-500"
+    - icon: "ti-game"
+      title: "Online Gambling & Gaming"
+      description: "Real-time optimization and fraud prevention"
+      capabilities:
+        - "Player behavior analysis & personalization"
+        - "Fraud detection & prevention systems"
+        - "Real-time odds optimization"
+        - "Responsible gaming AI monitoring"
+      stat: "$500M+ in fraud prevented annually"
+      color: "from-purple-500 to-pink-500"
+
+features:
+  - icon: "ti-shield"
+    title: "Security First"
+    description: "Enterprise-grade security built into every solution"
+  - icon: "ti-server"
+    title: "Token Optimization"
+    description: "Maximize ROI by optimizing every AI interaction"
+  - icon: "ti-bolt"
+    title: "Real-Time Processing"
+    description: "Low-latency AI for mission-critical operations"
