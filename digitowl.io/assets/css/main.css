@@ -56,9 +56,15 @@
     color: var(--color-secondary);
   }
 
-  h1 { font-size: 3.5rem; }
-  h2 { font-size: 2.5rem; }
-  h3 { font-size: 1.5rem; }
+  /* Fluid type: scales down gracefully on small screens without overflow */
+  h1 { font-size: clamp(2rem, 6vw + 0.5rem, 3.5rem); }
+  h2 { font-size: clamp(1.6rem, 4vw + 0.5rem, 2.5rem); }
+  h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 1.5rem); }
+
+  /* Prevent long unbroken strings (URLs, hashes) from forcing horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
 }
 
 /* Component styles */
@@ -331,7 +337,6 @@
     border-collapse: collapse;
     font-size: 0.95rem;
     border-radius: 0.5rem;
-    overflow: hidden;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
   }
 
@@ -425,11 +430,29 @@
     border-top: 2px solid #e2e8f0;
   }
 
-  /* Images */
+  /* Images - never exceed the content width on mobile */
   .blog-content img {
+    max-width: 100%;
+    height: auto;
     border-radius: 0.75rem;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     margin: 2rem 0;
+  }
+
+  /* Long links/words shouldn't force horizontal scroll */
+  .blog-content a,
+  .blog-content p,
+  .blog-content li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Wide tables scroll within their own container instead of the page */
+  .blog-content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Strong/Bold text */
@@ -595,6 +618,66 @@
   @media (max-width: 768px) {
     .terminal-grid {
       grid-template-columns: 1fr;
+    }
+
+    /* Tighten dashboard padding so it fits narrow viewports */
+    .cyber-dashboard-container {
+      padding: 1.5rem 0;
+    }
+
+    .terminal-body {
+      padding: 1rem;
+    }
+
+    .terminal-section {
+      padding: 0.75rem;
+    }
+
+    /* Header title is long — hide the verbose label, keep controls + status */
+    .terminal-header {
+      padding: 0.75rem 1rem;
+      gap: 0.5rem;
+    }
+
+    .terminal-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+    }
+
+    .terminal-separator,
+    .terminal-title .terminal-sensors {
+      display: none;
+    }
+
+    /* Counter: shrink digits and allow wrapping so 5 digits never overflow */
+    .threat-counter {
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .counter-digit {
+      font-size: 1.75rem;
+      min-width: 40px;
+      padding: 0.4rem 0.4rem;
+    }
+
+    /* Log height is more reasonable on small screens */
+    .terminal-log {
+      height: 220px;
+      font-size: 0.7rem;
+    }
+  }
+
+  /* Extra-small phones (iPhone SE / mini) */
+  @media (max-width: 380px) {
+    .counter-digit {
+      font-size: 1.4rem;
+      min-width: 34px;
+      padding: 0.3rem 0.25rem;
+    }
+
+    .terminal-status {
+      font-size: 0.65rem;
     }
   }
 

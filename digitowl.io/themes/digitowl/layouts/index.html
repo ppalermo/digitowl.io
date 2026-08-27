@@ -3,7 +3,7 @@
 {{ define "main" }}
 
 <!-- Hero Section -->
-<section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<section id="hero" class="relative min-h-screen flex items-center pt-24 pb-16 md:pt-20 md:pb-0 overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-primary-dark"></div>
   <div class="absolute inset-0 opacity-10">
@@ -47,11 +47,13 @@
     </div>
 
     <!-- Cyber Dashboard -->
-    {{ partial "cyber_dashboard.html" . }}
+    <div class="mt-12 md:mt-16">
+      {{ partial "cyber_dashboard.html" . }}
+    </div>
   </div>
 
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+  <!-- Scroll Indicator (hidden on mobile to avoid overlapping content) -->
+  <div class="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
     <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
     </svg>
