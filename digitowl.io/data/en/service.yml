@@ -19,9 +19,9 @@ service_item :
     icon : ti-alert
     content : 24/7 incident response and recovery services to minimize the impact of security breaches.
 
-  - name : Cloud Security
-    icon : ti-cloud
-    content : Secure your cloud infrastructure with our specialized cloud security solutions and best practices.
+  - name : Software Development & 3D Modeling
+    icon : ti-ruler-pencil
+    content : Custom software engineering and 3D modeling, from secure web and application development to detailed 3D assets and visualizations.
 
   - name : Security Training
     icon : ti-user
@@ -33,4 +33,8 @@ service_item :
 
   - name : AI Security Education
     icon : ti-book
-    content : Cutting-edge training programs on AI/ML security risks, red teaming AI systems, and building secure AI applications for your development teams. 
+    content : Cutting-edge training programs on AI/ML security risks, red teaming AI systems, and building secure AI applications for your development teams.
+
+  - name : Cloud Security
+    icon : ti-cloud
+    content : Secure your cloud infrastructure with our specialized cloud security solutions and best practices.
